@@ -25,3 +25,12 @@
     box-shadow: 0 1rem 3rem rgba($color-black-dark, 0.3);
   }
 }
+
+.btn--see-all {
+  &:link,
+  &:visited {
+    margin: 0 auto;
+    background-color: $color-brown-dark;
+    color: $color-white-dark;
+  }
+}
