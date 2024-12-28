@@ -22,6 +22,11 @@
   &__slogan {
     font-size: 2.4rem;
     font-weight: 150;
+    animation-name: transformToTop;
+    animation-timing-function: ease-in;
+    animation-duration: 0.4s;
+    animation-delay: 0.5s;
+    animation-fill-mode: backwards;
   }
 
   &__background-video {
@@ -32,6 +37,13 @@
     left: 0;
     z-index: -5000;
     object-fit: cover;
+  }
+  .btn {
+    animation-name: transformToTop;
+    animation-timing-function: ease-in;
+    animation-duration: 0.4s;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
   }
 }
 

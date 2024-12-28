@@ -1,4 +1,15 @@
 .btn {
+  padding: 1rem 2rem;
+  color: $color-brown-light;
+  background-color: $color-white-light;
+  border: none;
+  border-radius: 7px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.8rem;
+  box-shadow: 0 1rem 3rem rgba($color-black-dark, 0.2);
+  transition: all 0.3s;
+  cursor: pointer;
   &:link,
   &:visited {
     display: inline-block;
@@ -29,7 +40,7 @@
 .btn--see-all {
   &:link,
   &:visited {
-    margin: 0 auto;
+    margin: 2rem auto 0 auto;
     background-color: $color-brown-dark;
     color: $color-white-dark;
   }
