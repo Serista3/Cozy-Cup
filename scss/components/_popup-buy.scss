@@ -1,0 +1,29 @@
+.popup-buy {
+  position: fixed;
+  background-color: rgba($color-black-dark, 0.7);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: all 0.3s;
+  opacity: 0;
+  visibility: hidden;
+  &__content {
+    width: 30%;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    border-radius: 7px;
+    background-color: $color-white-dark;
+  }
+
+  &__product {
+  }
+
+  &__amount {
+  }
+}

@@ -138,6 +138,28 @@ body {
       top: 0;
       right: 0; }
 
+.popup-buy {
+  position: fixed;
+  background-color: rgba(39, 39, 39, 0.7);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: all 0.3s;
+  opacity: 0;
+  visibility: hidden; }
+  .popup-buy__content {
+    width: 30%;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    border-radius: 7px;
+    background-color: #fff; }
+
 .services__content {
   display: flex;
   justify-content: center;
@@ -176,7 +198,8 @@ body {
     width: 27%;
     position: relative;
     border-radius: 7px;
-    overflow: hidden; }
+    overflow: hidden;
+    transition: all 0.3s; }
   .recomMenu__img {
     position: absolute;
     top: 0;
@@ -185,6 +208,7 @@ body {
     height: 100%;
     z-index: -200; }
   .recomMenu__detail {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -194,10 +218,22 @@ body {
     transform: translateY(1rem);
     transition: all 0.3s;
     background-color: rgba(39, 39, 39, 0.6); }
+    .recomMenu__detail .heading-tertiary {
+      position: relative; }
+  .recomMenu__price {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.6rem;
+    background-color: #10b981;
+    padding: 0.5rem 1rem;
+    border-radius: 1.5rem; }
   .recomMenu__box:hover > .recomMenu__detail {
     transform: translateY(0);
     opacity: 1;
     visibility: visible; }
+  .recomMenu__box:hover {
+    transform: scale(1.03); }
 
 .nav {
   display: flex;
@@ -287,7 +323,7 @@ body {
   animation-name: transformToTop;
   animation-timing-function: ease-in;
   animation-duration: 0.4s;
-  animation-delay: 0.5s;
+  animation-delay: 0.25s;
   animation-fill-mode: backwards; }
 
 .hero__background-video {
@@ -303,7 +339,7 @@ body {
   animation-name: transformToTop;
   animation-timing-function: ease-in;
   animation-duration: 0.4s;
-  animation-delay: 1s;
+  animation-delay: 0.5s;
   animation-fill-mode: backwards; }
 
 .section-services {
