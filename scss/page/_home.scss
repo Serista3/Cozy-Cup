@@ -1,0 +1,36 @@
+.section-nav {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba($color-black-light, 0.5);
+}
+
+.section-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $color-white-light;
+  text-align: center;
+  position: relative;
+  background: linear-gradient(
+    rgba($color-black-light, 0.7),
+    rgba($color-black-dark, 0.7)
+  );
+  height: 55rem;
+}
+
+.hero {
+  &__slogan {
+    font-size: 2.4rem;
+    font-weight: 150;
+  }
+
+  &__background-video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -5000;
+    object-fit: cover;
+  }
+}

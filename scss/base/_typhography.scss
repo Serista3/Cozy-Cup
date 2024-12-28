@@ -1,0 +1,23 @@
+body {
+  color: $color-brown-dark;
+  font-size: 1.6rem;
+  font-family: "Inter", serif;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.heading-primary {
+  font-size: 7.6rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 2rem;
+}
+
+.heading-secondary {
+  font-size: 3.6rem;
+  font-weight: 400;
+}
+
+.heading-tertiary {
+  font-size: 2.2rem;
+}

@@ -1,0 +1,29 @@
+.intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__left {
+    width: 50%;
+  }
+
+  &__right {
+    position: relative;
+    width: 50%;
+  }
+
+  &__img {
+    position: absolute;
+    width: 50%;
+    box-shadow: 0 1rem 3rem rgba($color-black-dark, 0.25);
+    border-radius: 7px;
+    &--1 {
+      top: -10rem;
+      left: 5rem;
+    }
+
+    &--2 {
+      top: 5rem;
+      right: 0;
+    }
+  }
+}

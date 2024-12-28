@@ -1,0 +1,46 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__logo {
+    a {
+      display: inline-block;
+      font-size: 3rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: $color-brown-light;
+      transition: all 0.3s;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+  }
+
+  &__item {
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      display: inline-block;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: $color-brown-light;
+      transition: all 0.3s;
+    }
+
+    &:hover {
+      color: $color-green-dark;
+    }
+
+    &:active {
+      transform: scale(0.97);
+    }
+  }
+}
