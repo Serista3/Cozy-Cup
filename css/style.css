@@ -258,26 +258,26 @@ body {
 .services__icon {
   width: 5rem; }
 
-.recomMenu {
+.menu {
   display: flex;
   flex-direction: column;
   gap: 4rem; }
-  .recomMenu__content {
-    display: flex;
-    justify-content: center;
-    gap: 5rem; }
-  .recomMenu__box {
+  .menu__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10rem; }
+  .menu__box {
     color: white;
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    width: 27%;
+    width: 100%;
     position: relative;
     border-radius: 7px;
     box-shadow: 0 1rem 3rem rgba(39, 39, 39, 0.2);
     overflow: hidden;
     transition: all 0.3s; }
-  .recomMenu__img {
+  .menu__img {
     position: absolute;
     top: 0;
     left: 0;
@@ -285,7 +285,7 @@ body {
     height: 100%;
     z-index: -200;
     object-fit: cover; }
-  .recomMenu__detail {
+  .menu__detail {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -298,9 +298,9 @@ body {
     transform: translateY(1rem);
     transition: all 0.3s;
     background-color: rgba(39, 39, 39, 0.6); }
-    .recomMenu__detail .paragraph {
+    .menu__detail .paragraph {
       margin-bottom: 8rem; }
-  .recomMenu__price {
+  .menu__price {
     position: absolute;
     top: 3rem;
     right: 3rem;
@@ -309,11 +309,11 @@ body {
     padding: 0.5rem 1rem;
     border-radius: 1.5rem;
     text-transform: uppercase; }
-  .recomMenu__box:hover > .recomMenu__detail {
+  .menu__box:hover > .menu__detail {
     transform: translateY(0);
     opacity: 1;
     visibility: visible; }
-  .recomMenu__box:hover {
+  .menu__box:hover {
     transform: scale(1.03); }
 
 .btn--buy {

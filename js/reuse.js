@@ -4,5 +4,5 @@ import * as data from "../js/recieveData.js";
 
 // Selecting elements
 const btnBuy = document.querySelector(".btn--buy");
-console.log(btnBuy);
+
 /////////////////////////////////////////////////////

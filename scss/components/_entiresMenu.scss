@@ -1,11 +1,11 @@
-.recomMenu {
+.menu {
   display: flex;
   flex-direction: column;
   gap: 4rem;
   &__content {
-    display: flex;
-    justify-content: center;
-    gap: 5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10rem;
   }
 
   &__box {
@@ -13,7 +13,7 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    width: 27%;
+    width: 100%;
     position: relative;
     border-radius: 7px;
     box-shadow: 0 1rem 3rem rgba($color-black-dark, 0.2);

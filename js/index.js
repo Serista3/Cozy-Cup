@@ -3,9 +3,9 @@ import * as data from "../js/recieveData.js";
 /////////////////////////////////////////////////////
 
 // Selecting elements
-const recomContent = document.querySelector(".recomMenu__content");
-const popupContent = document.querySelector(".popup-buy__content");
+const recomContent = document.querySelector(".menu__content");
 const popup = document.querySelector(".popup-buy");
+const popupContent = document.querySelector(".popup-buy__content");
 
 /////////////////////////////////////////////////////
 
@@ -31,7 +31,7 @@ const createPopup = async function (e) {
         ${parentNode.querySelector(".paragraph").textContent}
         </p>
         <div class="popup-buy__price">${
-          parentNode.querySelector(".recomMenu__price").textContent
+          parentNode.querySelector(".menu__price").textContent
         }</div>
         </div>
     </div>
@@ -43,8 +43,14 @@ const createPopup = async function (e) {
         required
         />
         <button class="btn btn--confirm">Confirm</button>
-    </div> `;
-  popupContent.insertAdjacentHTML("afterbegin", html);
+    </div>`;
+
+  // check if has popup aleady
+  if (popupContent.firstChild) {
+    popupContent.innerHTML = html;
+  } else {
+    popupContent.insertAdjacentHTML("afterbegin", html);
+  }
 
   // add class to show popup
   popup.classList.add("show-popup");
@@ -55,7 +61,7 @@ const createPopup = async function (e) {
   addEventClickPopupClose(popup);
 };
 
-const hiddenPopup = function () {
+const hiddenPopup = function (e) {
   popup.classList.remove("show-popup");
   popupContent.classList.remove("show-content-popup");
 };
@@ -63,7 +69,9 @@ const hiddenPopup = function () {
 const hiddenPopupByClick = function (e) {
   if (!e.target.classList.contains("popup-buy")) return;
   e.target.classList.remove("show-popup");
-  e.target.firstChild.remove("show-content-popup");
+  e.target
+    .querySelector(".popup-buy__content")
+    .classList.remove("show-content-popup");
 };
 
 /////////////////////////////////////////////////////
@@ -99,7 +107,7 @@ const setDataRecomEl = async function (parentNode) {
   dataJson.products.forEach((p) => {
     const objectEl = createRecomEl(parentNode);
     objectEl.recomImg.setAttribute("src", `${p.items[0].img}`);
-    objectEl.recomImg.setAttribute("alt", `recomMenu-img`);
+    objectEl.recomImg.setAttribute("alt", `menu-img`);
     objectEl.heading3.textContent = p.items[0].name;
     objectEl.recomPrices.textContent = `${p.items[0].price} bath`;
     objectEl.paragraph.textContent = p.items[0].description;
@@ -122,12 +130,12 @@ const createRecomEl = function (parentNode) {
   const btnBuy = document.createElement("button");
 
   // set class to elements
-  recomBox.classList.add("recomMenu__box");
-  recomBoxImg.classList.add("recomMenu__box-img");
-  recomImg.classList.add("recomMenu__img");
-  recomDetail.classList.add("recomMenu__detail");
+  recomBox.classList.add("menu__box");
+  recomBoxImg.classList.add("menu__box-img");
+  recomImg.classList.add("menu__img");
+  recomDetail.classList.add("menu__detail");
   heading3.classList.add("heading-tertiary");
-  recomPrices.classList.add("recomMenu__price");
+  recomPrices.classList.add("menu__price");
   paragraph.classList.add("paragraph");
   btnBuy.classList.add("btn");
   btnBuy.classList.add("btn--buy");
