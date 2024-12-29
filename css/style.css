@@ -59,6 +59,12 @@ body {
   padding-top: 17rem !important;
   padding-bottom: 17rem !important; }
 
+.padding-verticaly-section-bottom {
+  padding-bottom: 17rem !important; }
+
+.padding-verticaly-section-top {
+  padding-top: 17rem !important; }
+
 .margin-btm-small {
   margin-bottom: 2rem !important; }
 
