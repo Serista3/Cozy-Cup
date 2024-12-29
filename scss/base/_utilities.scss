@@ -35,3 +35,14 @@
 .text-center {
   text-align: center !important;
 }
+
+.show-popup {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.show-content-popup {
+  transform: scale(1) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
