@@ -32,6 +32,7 @@ const setDataRecomEl = async function (parentNode) {
     const objectEl = reuse.createMenu(parentNode);
     objectEl.recomImg.setAttribute("src", `${p.items[0].img}`);
     objectEl.recomImg.setAttribute("alt", `menu-img`);
+    objectEl.additHeading.textContent = p.items[0].name;
     objectEl.heading3.textContent = p.items[0].name;
     objectEl.recomPrices.textContent = `${p.items[0].price} bath`;
     objectEl.paragraph.textContent = p.items[0].description;

@@ -92,6 +92,7 @@ export const createMenu = function (parentNode) {
   // create elements
   const recomBox = document.createElement("div");
   const recomBoxImg = document.createElement("div");
+  const additHeading = document.createElement("h3");
   const recomImg = document.createElement("img");
   const recomDetail = document.createElement("div");
   const heading3 = document.createElement("h3");
@@ -102,6 +103,7 @@ export const createMenu = function (parentNode) {
   // set class to elements
   recomBox.classList.add("menu__box");
   recomBoxImg.classList.add("menu__box-img");
+  additHeading.classList.add("menu__addit");
   recomImg.classList.add("menu__img");
   recomDetail.classList.add("menu__detail");
   heading3.classList.add("heading-tertiary");
@@ -113,6 +115,7 @@ export const createMenu = function (parentNode) {
   // append child node
   recomBox.appendChild(recomBoxImg);
   recomBoxImg.appendChild(recomImg);
+  recomBoxImg.appendChild(additHeading);
   recomBox.appendChild(recomDetail);
   recomDetail.appendChild(heading3);
   recomDetail.appendChild(recomPrices);
@@ -126,6 +129,7 @@ export const createMenu = function (parentNode) {
   return {
     recomBox,
     recomBoxImg,
+    additHeading,
     recomImg,
     recomDetail,
     heading3,
