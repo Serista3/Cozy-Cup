@@ -1,6 +1,7 @@
 .popup-buy {
   position: fixed;
   background-color: rgba($color-black-dark, 0.7);
+  backdrop-filter: blur(3px);
   height: 100vh;
   width: 100%;
   display: flex;
@@ -11,9 +12,11 @@
   opacity: 0;
   visibility: hidden;
   &__content {
+    position: relative;
     width: 30%;
     padding: 2rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 3rem;
@@ -21,9 +24,66 @@
     background-color: $color-white-dark;
   }
 
-  &__product {
+  &__header {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    // align-items: center;
+  }
+
+  &__img {
+    width: 50%;
+    border-radius: 7px;
+  }
+
+  &__detail {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    .recomMenu__price {
+      position: relative;
+      width: 30%;
+    }
+  }
+
+  &__body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
   }
 
   &__amount {
+    width: 30%;
+    font-size: 1.6rem;
+    text-align: center;
+    color: $color-black-dark;
+    padding: 1rem;
+    // border: none;
+    border: 2px solid $color-black-dark;
+    border-radius: 7px;
+    transition: all 0.3s;
+    &:focus {
+      outline: none;
+      border: 2px solid $color-green-dark;
+    }
+  }
+}
+
+.btn--close-pop {
+  position: absolute;
+  top: -1.5rem;
+  right: -1.5rem;
+  font-size: 1.8rem;
+  background-color: $color-white-dark;
+  color: $color-black-dark;
+  padding: 0.4rem 1.4rem;
+  border-radius: 50%;
+  border: 2px solid $color-black-dark;
+  cursor: pointer;
+  transition: all 0.3s;
+  &:hover {
+    background-color: $color-black-dark;
+    color: $color-white-dark;
   }
 }

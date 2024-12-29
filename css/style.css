@@ -117,6 +117,10 @@ body {
   background-color: #302a00;
   color: #fff; }
 
+.btn--confirm {
+  background-color: #272727;
+  color: #fff; }
+
 .intro {
   display: flex;
   justify-content: center;
@@ -141,6 +145,7 @@ body {
 .popup-buy {
   position: fixed;
   background-color: rgba(39, 39, 39, 0.7);
+  backdrop-filter: blur(3px);
   height: 100vh;
   width: 100%;
   display: flex;
@@ -151,14 +156,63 @@ body {
   opacity: 0;
   visibility: hidden; }
   .popup-buy__content {
+    position: relative;
     width: 30%;
     padding: 2rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 3rem;
     border-radius: 7px;
     background-color: #fff; }
+  .popup-buy__header {
+    display: flex;
+    justify-content: center;
+    gap: 3rem; }
+  .popup-buy__img {
+    width: 50%;
+    border-radius: 7px; }
+  .popup-buy__detail {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; }
+    .popup-buy__detail .recomMenu__price {
+      position: relative;
+      width: 30%; }
+  .popup-buy__body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem; }
+  .popup-buy__amount {
+    width: 30%;
+    font-size: 1.6rem;
+    text-align: center;
+    color: #272727;
+    padding: 1rem;
+    border: 2px solid #272727;
+    border-radius: 7px;
+    transition: all 0.3s; }
+    .popup-buy__amount:focus {
+      outline: none;
+      border: 2px solid #10b981; }
+
+.btn--close-pop {
+  position: absolute;
+  top: -1.5rem;
+  right: -1.5rem;
+  font-size: 1.8rem;
+  background-color: #fff;
+  color: #272727;
+  padding: 0.4rem 1.4rem;
+  border-radius: 50%;
+  border: 2px solid #272727;
+  cursor: pointer;
+  transition: all 0.3s; }
+  .btn--close-pop:hover {
+    background-color: #272727;
+    color: #fff; }
 
 .services__content {
   display: flex;

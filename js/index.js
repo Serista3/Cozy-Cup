@@ -1,0 +1,8 @@
+import * as data from "../js/recieveData.js";
+
+/////////////////////////////////////////////////////
+
+const recieveData = await data.receiveDataFromJson();
+console.log(recieveData);
+
+/////////////////////////////////////////////////////
