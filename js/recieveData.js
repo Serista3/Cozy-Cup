@@ -12,3 +12,32 @@ export const receiveDataFromJson = async function () {
 };
 
 /////////////////////////////////////////////////////
+
+// Data from order
+export const orderProducts = [];
+export const orderRecomProducts = [];
+
+/////////////////////////////////////////////////////
+
+// Set data to local storage
+export const setDataToLocal = function (key, data) {
+  localStorage.setItem(key, JSON.stringify(data));
+};
+
+/////////////////////////////////////////////////////
+
+// Get data from local storage
+export const getDataFromLocal = function (key) {
+  const data = JSON.parse(localStorage.getItem(key));
+  return data;
+};
+
+/////////////////////////////////////////////////////
+
+// Clear data from local storage
+export const clearDataFromLocal = function () {
+  localStorage.clear();
+};
+// clearDataFromLocal();
+
+/////////////////////////////////////////////////////

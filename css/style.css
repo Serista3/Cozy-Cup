@@ -137,6 +137,82 @@ body {
   background-color: #272727;
   color: #fff; }
 
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem; }
+  .menu__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10rem; }
+  .menu__box {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    position: relative;
+    border-radius: 7px;
+    box-shadow: 0 1rem 3rem rgba(39, 39, 39, 0.2);
+    overflow: hidden;
+    transition: all 0.3s;
+    position: relative; }
+  .menu__addit {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    font-weight: 350;
+    background-color: rgba(39, 39, 39, 0.6);
+    backdrop-filter: blur(3px);
+    color: #fff;
+    padding: 0.5rem 1.5rem;
+    border-radius: 7px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 1rem 3rem rgba(39, 39, 39, 0.3); }
+  .menu__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -200;
+    object-fit: cover; }
+  .menu__detail {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(1rem);
+    transition: all 0.3s;
+    background-color: rgba(39, 39, 39, 0.6); }
+    .menu__detail .paragraph {
+      margin-bottom: 8rem; }
+  .menu__price {
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+    font-size: 1.6rem;
+    background-color: #10b981;
+    padding: 0.5rem 1rem;
+    border-radius: 1.5rem;
+    text-transform: uppercase; }
+  .menu__box:hover > .menu__detail {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible; }
+  .menu__box:hover {
+    transform: scale(1.03); }
+
+.btn--buy {
+  margin-top: auto;
+  margin-bottom: 0; }
+
 .intro {
   display: flex;
   justify-content: center;
@@ -157,6 +233,29 @@ body {
     .intro__img--2 {
       top: 0;
       right: 0; }
+
+.order__table {
+  font-size: 1.8rem;
+  margin: 0 auto;
+  border-collapse: collapse;
+  text-align: center; }
+
+.order__heading {
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #272727;
+  border: 2px solid #272727;
+  padding: 2rem 4rem; }
+
+.order__img {
+  border-radius: 7px;
+  width: 100%;
+  height: 10rem;
+  object-fit: cover; }
+
+.order__data {
+  border: 2px solid #272727;
+  padding: 1rem 4rem; }
 
 .popup-buy {
   position: fixed;
@@ -269,82 +368,6 @@ body {
 
 .services__icon {
   width: 5rem; }
-
-.menu {
-  display: flex;
-  flex-direction: column;
-  gap: 4rem; }
-  .menu__content {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10rem; }
-  .menu__box {
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    width: 100%;
-    position: relative;
-    border-radius: 7px;
-    box-shadow: 0 1rem 3rem rgba(39, 39, 39, 0.2);
-    overflow: hidden;
-    transition: all 0.3s;
-    position: relative; }
-  .menu__addit {
-    position: absolute;
-    bottom: 1.5rem;
-    right: 1.5rem;
-    font-size: 2rem;
-    font-weight: 350;
-    background-color: rgba(39, 39, 39, 0.6);
-    backdrop-filter: blur(3px);
-    color: #fff;
-    padding: 0.5rem 1.5rem;
-    border-radius: 7px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 1rem 3rem rgba(39, 39, 39, 0.3); }
-  .menu__img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -200;
-    object-fit: cover; }
-  .menu__detail {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 3rem;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(1rem);
-    transition: all 0.3s;
-    background-color: rgba(39, 39, 39, 0.6); }
-    .menu__detail .paragraph {
-      margin-bottom: 8rem; }
-  .menu__price {
-    position: absolute;
-    top: 3rem;
-    right: 3rem;
-    font-size: 1.6rem;
-    background-color: #10b981;
-    padding: 0.5rem 1rem;
-    border-radius: 1.5rem;
-    text-transform: uppercase; }
-  .menu__box:hover > .menu__detail {
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible; }
-  .menu__box:hover {
-    transform: scale(1.03); }
-
-.btn--buy {
-  margin-top: auto;
-  margin-bottom: 0; }
 
 .nav {
   display: flex;

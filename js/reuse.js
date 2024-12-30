@@ -1,3 +1,5 @@
+import * as data from "../js/recieveData.js";
+
 /////////////////////////////////////////////////////
 
 // Selecting
@@ -24,9 +26,9 @@ export const createPopup = function (e) {
             />
         </div>
         <div class="popup-buy__detail">
-            <h2 class="heading-tertiary">${
+            <h3 class="heading-tertiary">${
               parentNode.querySelector(".heading-tertiary").textContent
-            }</h2>
+            }</h3>
             <p class="paragraph">
             ${parentNode.querySelector(".paragraph").textContent}
             </p>
@@ -80,7 +82,90 @@ const hiddenPopupByClick = function (e) {
 
 /////////////////////////////////////////////////////
 
-// Btncnfirm action
+// Check page
+const curPage = function () {
+  const location = window.location.href.split("/").at(-1);
+  return location;
+};
+
+/////////////////////////////////////////////////////
+
+// Store data from order popup
+const storeDataOrder = function (e) {
+  // find elements
+  const parentEl = e.target.parentNode;
+  const nameProduct = parentEl.querySelector(".heading-tertiary");
+  const imgProduct =
+    parentEl.previousElementSibling.querySelector(".popup-buy__img");
+  const popupBody = parentEl.querySelector(".popup-buy__body");
+  const amountProduct = popupBody.querySelector(".popup-buy__amount");
+  const price = popupBody.querySelector(".popup-buy__price");
+
+  // calc data
+  const date = new Date();
+  const formatDate = `${date.getDay().toString().padStart(2, "0")}/${date
+    .getMonth()
+    .toString()
+    .padStart(2, "0")}/${date.getFullYear()}`;
+  const name = nameProduct.textContent;
+  const image = imgProduct.src;
+  const amount = amountProduct.value;
+  let finalPrice = Number(
+    Number.parseFloat(amount) * Number.parseFloat(price.textContent)
+  ).toFixed(2);
+
+  // check if input === ""
+  if (amount === "") finalPrice = 0;
+
+  // store data
+  if (Number.parseInt(amount) || Number.parseInt(amount) > 0) {
+    // hidden popup
+    document
+      .querySelector(".popup-buy__content")
+      .classList.remove("show-content-popup");
+    document.querySelector(".popup-buy").classList.remove("show-popup");
+
+    // check page to store data
+    const page = curPage();
+    if (page === "menu.html") {
+      // check if list product is empty
+      const receiveOrderData = data.getDataFromLocal("orderData");
+      if (data.orderProducts.length === 0 && receiveOrderData) {
+        receiveOrderData.forEach((r) => {
+          data.orderProducts.push(r);
+        });
+      }
+
+      // push data to list
+      data.orderProducts.push({ formatDate, image, name, amount, finalPrice });
+
+      // set data to local
+      data.setDataToLocal("orderData", data.orderProducts);
+    }
+
+    if (page === "index.html") {
+      // check if list product is null
+      const receiveOrderRecom = data.getDataFromLocal("orderRecomData");
+      if (data.orderRecomProducts.length === 0 && receiveOrderRecom) {
+        receiveOrderRecom.forEach((r) => {
+          data.orderRecomProducts.push(r);
+        });
+      }
+
+      // push data to list
+      data.orderRecomProducts.push({
+        formatDate,
+        image,
+        name,
+        amount,
+        finalPrice,
+      });
+
+      // set data to local
+      data.setDataToLocal("orderRecomData", data.orderRecomProducts);
+    }
+  }
+};
 
 /////////////////////////////////////////////////////
 
@@ -94,9 +179,7 @@ const addEventClickPopupClose = function (e) {
 };
 
 const addEventClickConfirm = function (e) {
-  e.addEventListener("click", () => {
-    console.log("confirm here");
-  });
+  e.addEventListener("click", storeDataOrder);
 };
 
 /////////////////////////////////////////////////////

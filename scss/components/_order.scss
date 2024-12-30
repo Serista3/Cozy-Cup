@@ -1,0 +1,39 @@
+.order {
+  &__table {
+    font-size: 1.8rem;
+    margin: 0 auto;
+    border-collapse: collapse;
+    text-align: center;
+  }
+
+  &__thead {
+    // border: 1px solid $color-black-dark;
+  }
+
+  &__row {
+  }
+
+  &__heading {
+    text-transform: uppercase;
+    color: $color-white-dark;
+    background-color: $color-black-dark;
+    border: 2px solid $color-black-dark;
+    padding: 2rem 4rem;
+  }
+
+  &__img {
+    border-radius: 7px;
+    width: 100%;
+    height: 10rem;
+    object-fit: cover;
+  }
+
+  &__tbody {
+    // border: 1px solid $color-black-dark;
+  }
+
+  &__data {
+    border: 2px solid $color-black-dark;
+    padding: 1rem 4rem;
+  }
+}
