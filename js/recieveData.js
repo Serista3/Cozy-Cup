@@ -15,7 +15,6 @@ export const receiveDataFromJson = async function () {
 
 // Data from order
 export const orderProducts = [];
-export const orderRecomProducts = [];
 
 /////////////////////////////////////////////////////
 

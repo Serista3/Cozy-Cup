@@ -36,4 +36,12 @@
     border: 2px solid $color-black-dark;
     padding: 1rem 4rem;
   }
+
+  &__tfoot {
+    .order__row {
+      .order__heading:last-child {
+        background-color: $color-green-dark;
+      }
+    }
+  }
 }

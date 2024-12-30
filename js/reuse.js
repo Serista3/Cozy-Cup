@@ -82,14 +82,6 @@ const hiddenPopupByClick = function (e) {
 
 /////////////////////////////////////////////////////
 
-// Check page
-const curPage = function () {
-  const location = window.location.href.split("/").at(-1);
-  return location;
-};
-
-/////////////////////////////////////////////////////
-
 // Store data from order popup
 const storeDataOrder = function (e) {
   // find elements
@@ -125,45 +117,19 @@ const storeDataOrder = function (e) {
       .classList.remove("show-content-popup");
     document.querySelector(".popup-buy").classList.remove("show-popup");
 
-    // check page to store data
-    const page = curPage();
-    if (page === "menu.html") {
-      // check if list product is empty
-      const receiveOrderData = data.getDataFromLocal("orderData");
-      if (data.orderProducts.length === 0 && receiveOrderData) {
-        receiveOrderData.forEach((r) => {
-          data.orderProducts.push(r);
-        });
-      }
-
-      // push data to list
-      data.orderProducts.push({ formatDate, image, name, amount, finalPrice });
-
-      // set data to local
-      data.setDataToLocal("orderData", data.orderProducts);
-    }
-
-    if (page === "index.html") {
-      // check if list product is null
-      const receiveOrderRecom = data.getDataFromLocal("orderRecomData");
-      if (data.orderRecomProducts.length === 0 && receiveOrderRecom) {
-        receiveOrderRecom.forEach((r) => {
-          data.orderRecomProducts.push(r);
-        });
-      }
-
-      // push data to list
-      data.orderRecomProducts.push({
-        formatDate,
-        image,
-        name,
-        amount,
-        finalPrice,
+    // check if list product is empty
+    const receiveOrderData = data.getDataFromLocal("orderData");
+    if (data.orderProducts.length === 0 && receiveOrderData) {
+      receiveOrderData.forEach((r) => {
+        data.orderProducts.push(r);
       });
-
-      // set data to local
-      data.setDataToLocal("orderRecomData", data.orderRecomProducts);
     }
+
+    // push data to list
+    data.orderProducts.push({ formatDate, image, name, amount, finalPrice });
+
+    // set data to local
+    data.setDataToLocal("orderData", data.orderProducts);
   }
 };
 
