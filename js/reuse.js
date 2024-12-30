@@ -24,25 +24,26 @@ export const createPopup = function (e) {
             />
         </div>
         <div class="popup-buy__detail">
-        <h2 class="heading-tertiary">${
-          parentNode.querySelector(".heading-tertiary").textContent
-        }</h2>
-        <p class="paragraph">
-        ${parentNode.querySelector(".paragraph").textContent}
-        </p>
-        <div class="popup-buy__price">${
-          parentNode.querySelector(".menu__price").textContent
-        }</div>
+            <h2 class="heading-tertiary">${
+              parentNode.querySelector(".heading-tertiary").textContent
+            }</h2>
+            <p class="paragraph">
+            ${parentNode.querySelector(".paragraph").textContent}
+            </p>
+            
+            <div class="popup-buy__body">
+                <input
+                type="number"
+                class="popup-buy__amount"
+                placeholder="amount"
+                required
+                />
+                <div class="popup-buy__price">${
+                  parentNode.querySelector(".menu__price").textContent
+                }</div>
+            </div>
+            <button class="btn btn--confirm">Confirm</button
         </div>
-    </div>
-    <div class="popup-buy__body">
-        <input
-        type="number"
-        class="popup-buy__amount"
-        placeholder="amount"
-        required
-        />
-        <button class="btn btn--confirm">Confirm</button>
     </div>`;
 
   // insert html code to popupContent
@@ -55,6 +56,9 @@ export const createPopup = function (e) {
   // addevent to close popup
   addEventClickBtnClose(document.querySelector(".btn--close-pop"));
   addEventClickPopupClose(popup);
+
+  // if press confirm
+  addEventClickConfirm(document.querySelector(".btn--confirm"));
 };
 
 const hiddenPopup = function () {
@@ -76,6 +80,10 @@ const hiddenPopupByClick = function (e) {
 
 /////////////////////////////////////////////////////
 
+// Btncnfirm action
+
+/////////////////////////////////////////////////////
+
 // Addeventlistener
 const addEventClickBtnClose = function (e) {
   e.addEventListener("click", hiddenPopup);
@@ -83,6 +91,12 @@ const addEventClickBtnClose = function (e) {
 
 const addEventClickPopupClose = function (e) {
   e.addEventListener("click", hiddenPopupByClick);
+};
+
+const addEventClickConfirm = function (e) {
+  e.addEventListener("click", () => {
+    console.log("confirm here");
+  });
 };
 
 /////////////////////////////////////////////////////

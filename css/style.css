@@ -133,6 +133,7 @@ body {
   color: #fff; }
 
 .btn--confirm {
+  margin: auto 0 0 0;
   background-color: #272727;
   color: #fff; }
 
@@ -172,7 +173,8 @@ body {
   visibility: hidden; }
   .popup-buy__content {
     position: relative;
-    width: 30%;
+    max-width: 60rem;
+    height: 35rem;
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -187,6 +189,7 @@ body {
     transition: all 0.7s; }
   .popup-buy__header {
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     gap: 3rem; }
@@ -194,6 +197,7 @@ body {
     width: 50%; }
   .popup-buy__img {
     width: 100%;
+    height: 100%;
     border-radius: 7px;
     object-fit: cover; }
   .popup-buy__detail {
@@ -204,17 +208,19 @@ body {
   .popup-buy__price {
     margin-right: auto;
     font-size: 1.6rem;
+    color: #fff;
     background-color: #10b981;
     padding: 0.5rem 1rem;
     border-radius: 1.5rem;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    margin: 0 0 0 auto; }
   .popup-buy__body {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2rem; }
   .popup-buy__amount {
-    width: 30%;
+    width: 50%;
     font-size: 1.6rem;
     text-align: center;
     color: #272727;

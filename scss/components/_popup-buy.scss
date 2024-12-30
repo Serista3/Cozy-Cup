@@ -13,7 +13,8 @@
   visibility: hidden;
   &__content {
     position: relative;
-    width: 30%;
+    max-width: 60rem;
+    height: 35rem;
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -30,6 +31,7 @@
 
   &__header {
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     gap: 3rem;
@@ -42,6 +44,7 @@
 
   &__img {
     width: 100%;
+    height: 100%;
     border-radius: 7px;
     object-fit: cover;
   }
@@ -56,10 +59,12 @@
   &__price {
     margin-right: auto;
     font-size: 1.6rem;
+    color: $color-white-dark;
     background-color: $color-green-dark;
     padding: 0.5rem 1rem;
     border-radius: 1.5rem;
     text-transform: uppercase;
+    margin: 0 0 0 auto;
   }
   &__body {
     display: flex;
@@ -69,7 +74,7 @@
   }
 
   &__amount {
-    width: 30%;
+    width: 50%;
     font-size: 1.6rem;
     text-align: center;
     color: $color-black-dark;
