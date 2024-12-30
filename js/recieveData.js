@@ -7,7 +7,7 @@ export const receiveDataFromJson = async function () {
     const data = await response.json();
     return data;
   } catch (err) {
-    console.error(err.message);
+    alert(err.message);
   }
 };
 

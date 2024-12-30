@@ -97,7 +97,7 @@ body {
 
 .btn {
   padding: 1rem 2rem;
-  color: #322b00;
+  color: #302a00;
   background-color: white;
   border: none;
   border-radius: 7px;
@@ -110,7 +110,7 @@ body {
   .btn:link, .btn:visited {
     display: inline-block;
     padding: 1rem 2rem;
-    color: #322b00;
+    color: #302a00;
     background-color: white;
     border: none;
     border-radius: 7px;
@@ -365,7 +365,7 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  border-right: 7px solid #10ba82;
+  border-right: 7px solid #12d091;
   box-shadow: 0 1rem 3rem rgba(39, 39, 39, 0.2);
   gap: 1.5rem; }
 
@@ -382,7 +382,7 @@ body {
     font-weight: 400;
     text-transform: uppercase;
     text-decoration: none;
-    color: #322b00;
+    color: #302a00;
     transition: all 0.3s; }
   .nav__list {
     list-style: none;
@@ -394,7 +394,7 @@ body {
     display: inline-block;
     text-transform: uppercase;
     text-decoration: none;
-    color: #322b00;
+    color: #302a00;
     transition: all 0.3s; }
   .nav__link:hover {
     color: #10b981; }
@@ -442,7 +442,7 @@ body {
 .section-nav {
   padding-top: 3rem;
   padding-bottom: 3rem;
-  border-bottom: 1px solid rgba(40, 40, 40, 0.5); }
+  border-bottom: 1px solid rgba(39, 39, 39, 0.5); }
 
 .section-hero {
   display: flex;
@@ -451,7 +451,7 @@ body {
   color: white;
   text-align: center;
   position: relative;
-  background: linear-gradient(rgba(40, 40, 40, 0.7), rgba(39, 39, 39, 0.7));
+  background: linear-gradient(rgba(39, 39, 39, 0.7), rgba(39, 39, 39, 0.7));
   height: 55rem; }
 
 .hero__slogan {
