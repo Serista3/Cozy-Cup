@@ -110,7 +110,7 @@ const storeDataOrder = function (e) {
   if (amount === "") finalPrice = 0;
 
   // store data
-  if (Number.parseInt(amount) || Number.parseInt(amount) > 0) {
+  if (Number.parseInt(amount) && Number.parseInt(amount) > 0) {
     // hidden popup
     document
       .querySelector(".popup-buy__content")

@@ -29,6 +29,7 @@
   }
 
   &__img {
+    vertical-align: middle;
     border-radius: 7px;
     width: 100%;
     height: 10rem;
@@ -42,7 +43,7 @@
   &__data {
     border-bottom: 2px solid $color-black-dark;
     // border-top: 2px solid $color-black-dark;
-    padding: 1rem 4rem;
+    padding: 2rem 4rem;
   }
 
   &__tfoot {
