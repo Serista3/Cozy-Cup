@@ -36,7 +36,7 @@ const addDataToOrderTable = function () {
               </td>
               <td class="order__data">${d.name}</td>
               <td class="order__data">${d.amount}</td>
-              <td class="order__data">${d.finalPrice} BATH</td>
+              <td class="order__data">${d.finalPrice} BAHT</td>
             </tr>`;
       orderTbody.insertAdjacentHTML("afterbegin", html);
     });

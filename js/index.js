@@ -34,7 +34,7 @@ const setDataRecomEl = async function (parentNode) {
     objectEl.recomImg.setAttribute("alt", `menu-img`);
     objectEl.additHeading.textContent = p.items[0].name;
     objectEl.heading3.textContent = p.items[0].name;
-    objectEl.recomPrices.textContent = `${p.items[0].price} bath`;
+    objectEl.recomPrices.textContent = `${p.items[0].price} baht`;
     objectEl.paragraph.textContent = p.items[0].description;
     objectEl.btnBuy.textContent = "buy";
 

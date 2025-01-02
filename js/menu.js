@@ -40,7 +40,7 @@ const setDataMenuEl = async function (parentNode, want) {
         objectEl.recomImg.setAttribute("alt", `menu-img`);
         objectEl.additHeading.textContent = i.name;
         objectEl.heading3.textContent = i.name;
-        objectEl.recomPrices.textContent = `${i.price} bath`;
+        objectEl.recomPrices.textContent = `${i.price} baht`;
         objectEl.paragraph.textContent = i.description;
         objectEl.btnBuy.textContent = "buy";
 
