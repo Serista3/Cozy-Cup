@@ -5,6 +5,7 @@ import * as data from "../js/recieveData.js";
 // Selecting
 const popup = document.querySelector(".popup-buy");
 const popupContent = document.querySelector(".popup-buy__content");
+const noti = document.querySelector(".noti");
 
 /////////////////////////////////////////////////////
 
@@ -82,6 +83,32 @@ const hiddenPopupByClick = function (e) {
 
 /////////////////////////////////////////////////////
 
+// Notification
+const showNotification = function () {
+  // create noti
+  const htmlNoti = `
+    <div class="noti__content">You have successfully placed an order.</div>
+  `;
+  console.log(noti);
+  noti.insertAdjacentHTML("afterbegin", htmlNoti);
+
+  // show noti
+  setTimeout(() => {
+    document.querySelector(".noti__content").classList.add("show-noti");
+  }, 500);
+
+  // hidden noti
+  setTimeout(() => {
+    document.querySelector(".noti__content").classList.remove("show-noti");
+  }, 3000);
+
+  setTimeout(() => {
+    noti.removeChild(noti.firstElementChild);
+  }, 3500);
+};
+
+/////////////////////////////////////////////////////
+
 // Store data from order popup
 const storeDataOrder = function (e) {
   // find elements
@@ -130,6 +157,9 @@ const storeDataOrder = function (e) {
 
     // set data to local
     data.setDataToLocal("orderData", data.orderProducts);
+
+    // show noti
+    showNotification();
   }
 };
 

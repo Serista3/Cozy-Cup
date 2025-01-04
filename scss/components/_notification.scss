@@ -1,0 +1,22 @@
+.noti {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  &__content {
+    padding: 1.5rem 2rem;
+    border-radius: 7px;
+    border: 2px solid $color-green-dark;
+    color: $color-white-dark;
+    font-weight: 300;
+    background-color: $color-green-dark;
+    box-shadow: 0 1rem 4rem rgba($color-black-dark, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(2rem);
+    transition: all 0.3s;
+    z-index: 100000;
+  }
+}

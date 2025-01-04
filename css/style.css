@@ -95,6 +95,11 @@ body {
   opacity: 1 !important;
   visibility: visible !important; }
 
+.show-noti {
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+  visibility: visible !important; }
+
 .btn {
   padding: 1rem 2rem;
   color: #302a00;
@@ -233,6 +238,27 @@ body {
     .intro__img--2 {
       top: 0;
       right: 0; }
+
+.noti {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem; }
+  .noti__content {
+    padding: 1.5rem 2rem;
+    border-radius: 7px;
+    border: 2px solid #10b981;
+    color: #fff;
+    font-weight: 300;
+    background-color: #10b981;
+    box-shadow: 0 1rem 4rem rgba(39, 39, 39, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(2rem);
+    transition: all 0.3s;
+    z-index: 100000; }
 
 .order__table {
   font-size: 1.8rem;
