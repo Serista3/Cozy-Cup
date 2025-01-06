@@ -37,8 +37,15 @@
         </div>
         <a href="/html/menu.html" class="btn">see all &rarr;</a>
       </div>
-      <video autoplay muted class="hero__background-video">
+      <video
+        autoplay
+        muted
+        class="hero__background-video"
+        preload="none"
+        loading="lazy"
+      >
         <source src="/img & icon/hero-video.mp4" />
+        <p class="paragraph">Your browser does not support HTML5 video.</p>
       </video>
     </section>
     <section class="section-intro padding-verticaly-section">
@@ -56,14 +63,16 @@
         </div>
         <div class="intro__right">
           <img
-            src="img & icon/intro-img-1.jpg"
+            src="img & icon/intro-img-1.jpeg"
             alt="intro-img-1"
             class="intro__img intro__img--1"
+            loading="lazy"
           />
           <img
-            src="img & icon/intro-img-2.jpg"
+            src="img & icon/intro-img-2.jpeg"
             alt="intro-img-2"
             class="intro__img intro__img--2"
+            loading="lazy"
           />
         </div>
       </div>

@@ -89,7 +89,6 @@ const showNotification = function () {
   const htmlNoti = `
     <div class="noti__content">You have successfully placed an order.</div>
   `;
-  console.log(noti);
   noti.insertAdjacentHTML("afterbegin", htmlNoti);
 
   // show noti
@@ -100,11 +99,12 @@ const showNotification = function () {
   // hidden noti
   setTimeout(() => {
     document.querySelector(".noti__content").classList.remove("show-noti");
-  }, 3000);
+  }, 2000);
 
+  // remove childe node noti
   setTimeout(() => {
     noti.removeChild(noti.firstElementChild);
-  }, 3500);
+  }, 2500);
 };
 
 /////////////////////////////////////////////////////
