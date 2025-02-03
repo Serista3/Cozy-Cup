@@ -7,49 +7,85 @@
           "name": "Espresso",
           "description": "Strong coffee for traditional coffee lovers",
           "price": 50,
-          "img": "https://images.pexels.com/photos/2396220/pexels-photo-2396220.jpeg"
+          "img": "/img/coffee/espresso.jpeg"
         },
         {
           "name": "Americano",
           "description": "Black coffee with no sugar, perfect for health-conscious individuals",
           "price": 55,
-          "img": "https://images.pexels.com/photos/28935033/pexels-photo-28935033.jpeg"
+          "img": "/img/coffee/americano.jpeg"
         },
         {
           "name": "Latte",
           "description": "Coffee mixed with milk for a smooth taste",
           "price": 60,
-          "img": "https://images.pexels.com/photos/302903/pexels-photo-302903.jpeg"
+          "img": "/img/coffee/latte.jpeg"
         },
         {
           "name": "Cappuccino",
           "description": "Coffee with milk foam and cocoa powder",
           "price": 65,
-          "img": "https://images.pexels.com/photos/2638019/pexels-photo-2638019.jpeg"
+          "img": "/img/coffee/cappuccino.jpeg"
         },
         {
           "name": "Mocha",
           "description": "Rich coffee blended with chocolate",
           "price": 70,
-          "img": "https://images.pexels.com/photos/849645/pexels-photo-849645.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          "img": "/img/coffee/mocha.jpeg"
         },
         {
           "name": "Caramel Latte",
           "description": "Sweet coffee with caramel flavor",
           "price": 75,
-          "img": "https://images.pexels.com/photos/10996412/pexels-photo-10996412.jpeg"
+          "img": "/img/coffee/caramel-latte.jpeg"
         },
         {
           "name": "Flat White",
           "description": "Coffee with milk in Australian style",
           "price": 70,
-          "img": "https://images.pexels.com/photos/3879495/pexels-photo-3879495.jpeg"
+          "img": "/img/coffee/flat-white.jpeg"
         },
         {
           "name": "Iced Coffee",
           "description": "Refreshing iced coffee",
           "price": 60,
-          "img": "https://images.pexels.com/photos/3636959/pexels-photo-3636959.jpeg"
+          "img": "/img/coffee/iced-coffee.jpeg"
+        },
+        {
+          "name": "Irish Coffee",
+          "description": "Coffee mixed with Irish whiskey",
+          "price": 80,
+          "img": "/img/coffee/irish-coffee.jpg"
+        },
+        {
+          "name": "Café au Lait",
+          "description": "Coffee with steamed milk",
+          "price": 65,
+          "img": "/img/coffee/cafe-lait.jpg"
+        },
+        {
+          "name": "Affogato",
+          "description": "Espresso poured over ice cream",
+          "price": 85,
+          "img": "/img/coffee/affogato.jpg"
+        },
+        {
+          "name": "Macchiato",
+          "description": "Espresso with a small amount of frothy milk",
+          "price": 70,
+          "img": "/img/coffee/macchiato.jpg"
+        },
+        {
+          "name": "Turkish Coffee",
+          "description": "Traditional Turkish coffee with a strong taste",
+          "price": 75,
+          "img": "/img/coffee/turkish-coffee.jpg"
+        },
+        {
+          "name": "Viennese Coffee",
+          "description": "Coffee with whipped cream",
+          "price": 80,
+          "img": "/img/coffee/Viennese_coffee.webp"
         }
       ]
     },
@@ -60,49 +96,85 @@
           "name": "Thai Iced Tea",
           "description": "Sweet and creamy Thai iced tea",
           "price": 50,
-          "img": "https://images.pexels.com/photos/1484678/pexels-photo-1484678.jpeg"
+          "img": "/img/tea/thia-ice-tea.jpeg"
         },
         {
           "name": "Hot Thai Tea",
           "description": "Warm and fragrant Thai tea",
           "price": 50,
-          "img": "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          "img": "/img/tea/hot-thai-tea.avif"
         },
         {
           "name": "Iced Green Tea",
           "description": "Refreshing iced green tea, perfect for health-conscious individuals",
           "price": 55,
-          "img": "https://images.pexels.com/photos/3090274/pexels-photo-3090274.jpeg"
+          "img": "/img/tea/iced-green-tea.jpeg"
         },
         {
           "name": "Hot Green Tea",
           "description": "Rich and warm green tea",
           "price": 55,
-          "img": "https://images.unsplash.com/photo-1711602926021-db8bce24843a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          "img": "/img/tea/hot-green-tea.avif"
         },
         {
           "name": "Iced Black Tea",
           "description": "Unsweetened iced black tea, ideal for health enthusiasts",
           "price": 45,
-          "img": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          "img": "/img/tea/iced-black-tea.avif"
         },
         {
           "name": "Hot Black Tea",
           "description": "Warm and fragrant black tea",
           "price": 45,
-          "img": "https://images.pexels.com/photos/734983/pexels-photo-734983.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          "img": "/img/tea/hot-black-tea.webp"
         },
         {
           "name": "Iced Lemon Tea",
           "description": "Iced black tea mixed with lemon for a tangy and refreshing taste",
           "price": 50,
-          "img": "https://images.unsplash.com/photo-1601218291833-c65a25b08daa?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          "img": "/img/tea/iced-lemon-tea.avif"
         },
         {
           "name": "Bubble Tea",
           "description": "Sweet and creamy milk tea with chewy tapioca pearls",
           "price": 65,
-          "img": "https://images.pexels.com/photos/1638280/pexels-photo-1638280.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          "img": "/img/tea/bubble-tea.jpeg"
+        },
+        {
+          "name": "Oolong Tea",
+          "description": "Rich and fragrant oolong tea",
+          "price": 60,
+          "img": "/img/tea/oolong-tea.avif"
+        },
+        {
+          "name": "Chamomile Tea",
+          "description": "Relaxing chamomile tea for a soothing experience",
+          "price": 55,
+          "img": "/img/tea/chamomile-tea.jpg"
+        },
+        {
+          "name": "Earl Grey Tea",
+          "description": "Classic black tea with a hint of bergamot",
+          "price": 60,
+          "img": "/img/tea/earl-grey-tea.jpg"
+        },
+        {
+          "name": "Jasmine Tea",
+          "description": "Fragrant green tea with jasmine flowers",
+          "price": 55,
+          "img": "/img/tea/jasmine-tea.webp"
+        },
+        {
+          "name": "Peppermint Tea",
+          "description": "Refreshing peppermint tea with a cool taste",
+          "price": 50,
+          "img": "/img/tea/peppermint_tea.webp"
+        },
+        {
+          "name": "Matcha Latte",
+          "description": "Creamy matcha latte with a vibrant green color",
+          "price": 70,
+          "img": "/img/tea/matcha-latte.jpg"
         }
       ]
     },
@@ -113,49 +185,85 @@
           "name": "Chocolate Cake",
           "description": "Rich chocolate cake for sweet lovers",
           "price": 80,
-          "img": "https://images.pexels.com/photos/4110008/pexels-photo-4110008.jpeg"
+          "img": "/img/dessert/choc-cake.jpeg"
         },
         {
           "name": "Vanilla Cake",
           "description": "Delightful and fragrant vanilla cake",
           "price": 75,
-          "img": "https://images.pexels.com/photos/29819835/pexels-photo-29819835.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          "img": "/img/dessert/vanilla-cake.webp"
         },
         {
           "name": "Cheesecake",
           "description": "Smooth and creamy cheesecake",
           "price": 90,
-          "img": "https://images.pexels.com/photos/3185509/pexels-photo-3185509.png"
+          "img": "/img/dessert/cheese-cake.jpg"
         },
         {
           "name": "Fruit Tart",
           "description": "Fresh fruit tart with a perfect balance of sweet and tangy",
           "price": 85,
-          "img": "https://images.pexels.com/photos/29961484/pexels-photo-29961484.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          "img": "/img/dessert/fruit-tart.jpeg"
         },
         {
           "name": "Brownie",
           "description": "Chewy chocolate brownie",
           "price": 70,
-          "img": "https://images.pexels.com/photos/45202/brownie-dessert-cake-sweet-45202.jpeg"
+          "img": "/img/dessert/brownie.jpeg"
         },
         {
           "name": "Macaron",
           "description": "Colorful macarons with a variety of flavors",
           "price": 60,
-          "img": "https://images.pexels.com/photos/1346345/pexels-photo-1346345.jpeg"
+          "img": "/img/dessert/macaron.jpeg"
         },
         {
           "name": "Pancake",
           "description": "Fluffy pancakes topped with sweet syrup",
           "price": 80,
-          "img": "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          "img": "/img/dessert/pancake.jpeg"
         },
         {
           "name": "Ice Cream",
           "description": "Refreshing ice cream with various flavors",
           "price": 50,
-          "img": "https://images.pexels.com/photos/1343504/pexels-photo-1343504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          "img": "/img/dessert/ice-cream.webp"
+        },
+        {
+          "name": "Apple Pie",
+          "description": "Classic apple pie with a flaky crust",
+          "price": 85,
+          "img": "/img/dessert/apple-pie.jpg"
+        },
+        {
+          "name": "Tiramisu",
+          "description": "Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cheese",
+          "price": 90,
+          "img": "/img/dessert/tiramisu.jpg"
+        },
+        {
+          "name": "Pudding",
+          "description": "Creamy vanilla pudding",
+          "price": 55,
+          "img": "/img/dessert/pudding.jpg"
+        },
+        {
+          "name": "Lemon Tart",
+          "description": "Tangy lemon tart with a buttery crust",
+          "price": 80,
+          "img": "/img/dessert/lemon-tart.jpg"
+        },
+        {
+          "name": "Profiteroles",
+          "description": "Cream-filled choux pastries with chocolate sauce",
+          "price": 85,
+          "img": "/img/dessert/Profiteroles.jpg"
+        },
+        {
+          "name": "Banoffee Pie",
+          "description": "Banana and toffee pie with a biscuit base",
+          "price": 90,
+          "img": "/img/dessert/banoffee-pie.jpg"
         }
       ]
     }

@@ -52,7 +52,7 @@ const addDataToOrderTable = function () {
   }
 
   // set final price
-  finalPriceEl.textContent = `${orderFinalPrice.toFixed(2)} BATH`;
+  finalPriceEl.textContent = `${orderFinalPrice.toFixed(2)} BAHT`;
 };
 
 /////////////////////////////////////////////////////
@@ -110,7 +110,7 @@ const delOrder = function (e) {
 
   // update final price
   orderFinalPrice -= price;
-  finalPriceEl.textContent = `${orderFinalPrice.toFixed(2)} BATH`;
+  finalPriceEl.textContent = `${orderFinalPrice.toFixed(2)} BAHT`;
 
   // clear local storage
   if (receiveData.length === 0) {
@@ -128,7 +128,7 @@ const delAllOrder = function () {
 
   // set final price = 0
   orderFinalPrice = 0;
-  finalPriceEl.textContent = `${orderFinalPrice.toFixed(2)} BATH`;
+  finalPriceEl.textContent = `${orderFinalPrice.toFixed(2)} BAHT`;
 
   // clear data storage
   data.clearDataFromLocal();
