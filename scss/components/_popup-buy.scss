@@ -1,6 +1,6 @@
 .popup-buy {
   position: fixed;
-  background-color: rgba($color-black-dark, 0.7);
+  background-color: rgba($color-black-dark, 0.3);
   backdrop-filter: blur(3px);
   height: 100vh;
   width: 100%;
@@ -26,7 +26,7 @@
     transform: scale(0.4);
     opacity: 0;
     visibility: hidden;
-    transition: all 0.7s;
+    transition: all 0.5s;
   }
 
   &__header {

@@ -288,27 +288,47 @@ body {
 .order__data {
   border-bottom: 2px solid #272727;
   padding: 2rem 4rem; }
+  .order__data svg {
+    cursor: pointer;
+    transition: all 0.3s; }
+    .order__data svg:hover {
+      fill: #e10000; }
 
-.order__tfoot .order__row .order__heading {
+.order__tfoot .order__row .order__heading,
+.order__tfoot .order__row .order__heading-del {
   background-color: #272727;
   color: #fff;
   border: none;
   border-radius: 0; }
-  .order__tfoot .order__row .order__heading:first-child {
+  .order__tfoot .order__row .order__heading:first-child,
+  .order__tfoot .order__row .order__heading-del:first-child {
     border-top-left-radius: 7px;
     border-bottom-left-radius: 7px; }
-  .order__tfoot .order__row .order__heading:nth-child(4) {
+  .order__tfoot .order__row .order__heading:nth-child(4),
+  .order__tfoot .order__row .order__heading-del:nth-child(4) {
     border-top-right-radius: 7px;
     border-bottom-right-radius: 7px; }
-  .order__tfoot .order__row .order__heading:last-child {
+  .order__tfoot .order__row .order__heading-final,
+  .order__tfoot .order__row .order__heading-del-final {
     border-radius: 7px;
     border-left: 2px solid #fff;
     color: white;
     background-color: #10b981; }
+  .order__tfoot .order__row .order__heading-del,
+  .order__tfoot .order__row .order__heading-del-del {
+    border-left: 2px solid #fff;
+    background-color: #fa0000;
+    border-radius: 7px;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    cursor: pointer; }
+    .order__tfoot .order__row .order__heading-del:hover,
+    .order__tfoot .order__row .order__heading-del-del:hover {
+      background-color: #e10000; }
 
 .popup-buy {
   position: fixed;
-  background-color: rgba(39, 39, 39, 0.7);
+  background-color: rgba(39, 39, 39, 0.3);
   backdrop-filter: blur(3px);
   height: 100vh;
   width: 100%;
@@ -334,7 +354,7 @@ body {
     transform: scale(0.4);
     opacity: 0;
     visibility: hidden;
-    transition: all 0.7s; }
+    transition: all 0.5s; }
   .popup-buy__header {
     width: 100%;
     height: 100%;
@@ -395,6 +415,48 @@ body {
   .btn--close-pop:hover {
     background-color: #272727;
     color: #fff; }
+
+.del-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(3px);
+  background-color: rgba(39, 39, 39, 0.3);
+  z-index: 1000;
+  transition: all 0.3s;
+  opacity: 0;
+  visibility: hidden; }
+  .del-popup .del {
+    position: relative;
+    background-color: #fff;
+    padding: 4rem;
+    width: 20%;
+    border-radius: 7px;
+    box-shadow: 0 1rem 3rem rgba(39, 39, 39, 0.2);
+    transform: scale(0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s; }
+    .del-popup .del__btns {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem; }
+
+.btn--yes {
+  color: white;
+  background-color: #14e8a2;
+  width: 100%; }
+
+.btn--no {
+  color: white;
+  background-color: #fa0000;
+  width: 100%; }
 
 .services__content {
   display: flex;
