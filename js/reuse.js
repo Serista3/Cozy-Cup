@@ -39,6 +39,8 @@ export const createPopup = function (e) {
                 type="number"
                 class="popup-buy__amount"
                 placeholder="amount"
+                min="1"
+                max="100000"
                 required
                 />
                 <div class="popup-buy__price">${
@@ -85,26 +87,33 @@ const hiddenPopupByClick = function (e) {
 
 // Notification
 const showNotification = function () {
-  // create noti
-  const htmlNoti = `
-    <div class="noti__content">You have successfully placed an order.</div>
-  `;
-  noti.insertAdjacentHTML("afterbegin", htmlNoti);
+  // create current node
+  const div = document.createElement("div");
+  const textNode = document.createTextNode(
+    "You have successfully placed an order."
+  );
+
+  // add class to current node
+  div.classList.add("noti__content");
+
+  // add child to parent node
+  div.appendChild(textNode);
+  noti.prepend(div);
 
   // show noti
   setTimeout(() => {
-    document.querySelector(".noti__content").classList.add("show-noti");
+    div.classList.add("show-noti");
   }, 500);
 
   // hidden noti
   setTimeout(() => {
-    document.querySelector(".noti__content").classList.remove("show-noti");
-  }, 2000);
+    div.classList.remove("show-noti");
+  }, 2500);
 
   // remove childe node noti
   setTimeout(() => {
-    noti.removeChild(noti.firstElementChild);
-  }, 2500);
+    noti.removeChild(div);
+  }, 3000);
 };
 
 /////////////////////////////////////////////////////
@@ -130,14 +139,18 @@ const storeDataOrder = function (e) {
   const image = imgProduct.src;
   const amount = amountProduct.value;
   let finalPrice = Number(
-    Number.parseFloat(amount) * Number.parseFloat(price.textContent)
+    Number.parseInt(amount) * Number.parseFloat(price.textContent)
   ).toFixed(2);
 
   // check if input === ""
   if (amount === "") finalPrice = 0;
 
   // store data
-  if (Number.parseInt(amount) && Number.parseInt(amount) > 0) {
+  if (
+    Number.parseInt(amount) &&
+    Number.parseInt(amount) > 0 &&
+    Number.parseFloat(amount) % 1 === 0
+  ) {
     // hidden popup
     document
       .querySelector(".popup-buy__content")
@@ -153,7 +166,13 @@ const storeDataOrder = function (e) {
     }
 
     // push data to list
-    data.orderProducts.push({ formatDate, image, name, amount, finalPrice });
+    data.orderProducts.push({
+      formatDate,
+      image,
+      name,
+      amount: Number.parseInt(amount).toString(),
+      finalPrice,
+    });
 
     // set data to local
     data.setDataToLocal("orderData", data.orderProducts);
