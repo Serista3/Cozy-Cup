@@ -1,11 +1,35 @@
 .menu {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   gap: 4rem;
+  h2 {
+    @include responsive(tap-port) {
+      text-align: center;
+    }
+  }
+
   &__content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
     gap: 10rem;
+    @include responsive(normal) {
+      gap: 7rem;
+    }
+
+    @include responsive(tap-land) {
+      gap: 5rem;
+    }
+
+    @include responsive(tap-port) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include responsive(phone) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__box {

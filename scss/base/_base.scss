@@ -10,6 +10,17 @@
 
 html {
   font-size: 62.5%;
+  @include responsive(tap-land) {
+    font-size: 57%;
+  }
+
+  @include responsive(tap-port) {
+    font-size: 52%;
+  }
+
+  @include responsive(phone) {
+    font-size: 47%;
+  }
 }
 
 body {

@@ -1,0 +1,37 @@
+// responsive
+@mixin responsive($screen) {
+  // phone <= 600px
+  @if $screen == phone {
+    @media screen and (max-width: 37.5em) {
+      @content;
+    }
+  }
+
+  // tap-port <= 900px
+  @if $screen == tap-port {
+    @media screen and (max-width: 56.25em) {
+      @content;
+    }
+  }
+
+  // tap-land <= 1200px
+  @if $screen == tap-land {
+    @media screen and (max-width: 75em) {
+      @content;
+    }
+  }
+
+  // normal <= 1400
+  @if $screen == normal {
+    @media screen and (max-width: 87.5em) {
+      @content;
+    }
+  }
+
+  // big-desk >= 1920px
+  @if $screen == big-desk {
+    @media screen and (max-width: 120em) {
+      @content;
+    }
+  }
+}

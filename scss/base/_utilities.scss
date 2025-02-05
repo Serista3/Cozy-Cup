@@ -6,14 +6,50 @@
 .padding-verticaly-section {
   padding-top: 17rem !important;
   padding-bottom: 17rem !important;
+  @include responsive(tap-land) {
+    padding-top: 14rem !important;
+    padding-bottom: 14rem !important;
+  }
+
+  @include responsive(tap-port) {
+    padding-top: 11rem !important;
+    padding-bottom: 11rem !important;
+  }
+
+  @include responsive(phone) {
+    padding-top: 8rem !important;
+    padding-bottom: 8rem !important;
+  }
 }
 
 .padding-verticaly-section-bottom {
   padding-bottom: 17rem !important;
+  @include responsive(tap-land) {
+    padding-bottom: 14rem !important;
+  }
+
+  @include responsive(tap-port) {
+    padding-bottom: 11rem !important;
+  }
+
+  @include responsive(phone) {
+    padding-bottom: 8rem !important;
+  }
 }
 
 .padding-verticaly-section-top {
   padding-top: 17rem !important;
+  @include responsive(tap-land) {
+    padding-top: 14rem !important;
+  }
+
+  @include responsive(tap-port) {
+    padding-top: 11rem !important;
+  }
+
+  @include responsive(phone) {
+    padding-top: 8rem !important;
+  }
 }
 
 .margin-btm-small {
@@ -22,10 +58,16 @@
 
 .margin-btm-medium {
   margin-bottom: 4rem !important;
+  @include responsive(tap-port) {
+    margin-bottom: 2rem !important;
+  }
 }
 
 .margin-btm-large {
   margin-bottom: 8rem !important;
+  @include responsive(tap-port) {
+    margin-bottom: 6rem !important;
+  }
 }
 
 .margin-top-small {

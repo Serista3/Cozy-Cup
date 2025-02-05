@@ -1,4 +1,12 @@
 .order {
+  @include responsive(normal) {
+    margin: 0 3rem !important;
+  }
+
+  &__table-continer {
+    overflow-x: auto;
+  }
+
   &__table {
     font-size: 1.8rem;
     margin: 0 auto;
@@ -26,6 +34,26 @@
     border: 2px solid $color-white-dark;
     border-radius: 7px;
     padding: 2rem 4rem;
+    &:first-child {
+      @include responsive(phone) {
+        display: none;
+      }
+    }
+
+    &:nth-child(2) {
+      @include responsive(phone) {
+        display: none;
+      }
+    }
+
+    @include responsive(tap-land) {
+      font-size: 1.6rem;
+      padding: 1.5rem 3rem;
+    }
+
+    @include responsive(tap-port) {
+      padding: 1rem 2rem;
+    }
   }
 
   &__img {
@@ -44,32 +72,57 @@
     border-bottom: 2px solid $color-black-dark;
     // border-top: 2px solid $color-black-dark;
     padding: 2rem 4rem;
+
+    &:first-child {
+      @include responsive(phone) {
+        display: none;
+      }
+    }
+
+    &:nth-child(2) {
+      @include responsive(phone) {
+        display: none;
+      }
+    }
+
+    @include responsive(tap-land) {
+      padding: 1.5rem 3rem;
+    }
+
+    @include responsive(tap-port) {
+      font-size: 1.6rem;
+      padding: 1rem 2rem;
+      width: 30%;
+    }
+
     svg {
       cursor: pointer;
       transition: all 0.3s;
       &:hover {
         fill: darken(#fa0000, 5%);
       }
+
+      @include responsive(tap-port) {
+        width: 26px;
+        height: 26px;
+      }
+
+      @include responsive(phone) {
+        width: 20px;
+        height: 20px;
+      }
     }
   }
 
   &__tfoot {
     .order__row {
-      .order__heading,
-      .order__heading-del {
+      .order__heading {
+        padding: 1rem 2rem;
         background-color: $color-black-dark;
         color: $color-white-dark;
         border: none;
-        border-radius: 0;
-        &:first-child {
-          border-top-left-radius: 7px;
-          border-bottom-left-radius: 7px;
-        }
-
-        &:nth-child(4) {
-          border-top-right-radius: 7px;
-          border-bottom-right-radius: 7px;
-        }
+        border-radius: 7px;
+        text-align: left;
 
         &-final {
           border-radius: 7px;
@@ -79,10 +132,14 @@
         }
 
         &-del {
+          padding: 1rem 2rem;
+          color: $color-white-dark;
+          border: none;
           border-left: 2px solid $color-white-dark;
           background-color: #fa0000;
           border-radius: 7px;
           text-transform: uppercase;
+          text-align: center;
           transition: all 0.3s;
           cursor: pointer;
           &:hover {

@@ -2,13 +2,28 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  @include responsive(phone) {
+    flex-direction: column;
+  }
   &__left {
     width: 50%;
+    @include responsive(tap-port) {
+      width: 100%;
+    }
   }
 
   &__right {
     position: relative;
     width: 50%;
+    @include responsive(tap-port) {
+      width: 70%;
+      display: flex;
+      gap: 4rem;
+    }
+
+    @include responsive(phone) {
+      margin-top: 4rem;
+    }
   }
 
   &__img {
@@ -16,14 +31,31 @@
     width: 50%;
     box-shadow: 0 1rem 3rem rgba($color-black-dark, 0.25);
     border-radius: 7px;
+    @include responsive(tap-port) {
+      width: 80%;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    @include responsive(phone) {
+      display: none;
+    }
+
     &--1 {
       top: -15rem;
       left: 5rem;
+      @include responsive(tap-port) {
+        top: 0;
+        left: 0;
+      }
     }
 
     &--2 {
       top: 0;
       right: 0;
+      @include responsive(tap-port) {
+        display: none;
+      }
     }
   }
 }

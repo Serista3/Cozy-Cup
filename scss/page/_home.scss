@@ -27,6 +27,13 @@
     animation-duration: 0.4s;
     animation-delay: 0.25s;
     animation-fill-mode: backwards;
+    @include responsive(tap-port) {
+      font-size: 2.2rem;
+    }
+
+    @include responsive(phone) {
+      font-size: 2rem;
+    }
   }
 
   &__background-video {
@@ -47,12 +54,21 @@
   }
 }
 
+.section-intro {
+  @include responsive(normal) {
+    margin: 0 3rem;
+  }
+}
+
 .section-services {
   background-color: $color-brown-dark;
   color: $color-white-light;
 }
 
-.section-recomMenu {
+.section-menu {
+  @include responsive(normal) {
+    margin: 0 3rem;
+  }
 }
 
 .section-footer {

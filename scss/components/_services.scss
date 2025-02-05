@@ -4,6 +4,15 @@
     justify-content: center;
     // align-items: center;
     gap: 4rem;
+    @include responsive(tap-port) {
+      flex-direction: column;
+      align-items: center;
+      gap: 5rem;
+    }
+
+    @include responsive(phone) {
+      margin: 0 3rem;
+    }
   }
 
   &__box {
@@ -14,11 +23,20 @@
     background-color: $color-white-dark;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     text-align: center;
     border-right: 7px solid $color-green-light;
     box-shadow: 0 1rem 3rem rgba($color-black-dark, 0.2);
     gap: 1.5rem;
+    @include responsive(tap-port) {
+      width: 50%;
+    }
+
+    @include responsive(phone) {
+      width: 100%;
+    }
+
     &-icon {
     }
   }

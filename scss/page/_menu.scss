@@ -1,0 +1,17 @@
+.section-coffee {
+  @include responsive(normal) {
+    margin: 0 3rem;
+  }
+}
+
+.section-tea {
+  @include responsive(normal) {
+    margin: 0 3rem;
+  }
+}
+
+.section-dessert {
+  @include responsive(normal) {
+    margin: 0 3rem;
+  }
+}
