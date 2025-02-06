@@ -57,7 +57,7 @@
         preload="none"
         loading="lazy"
       >
-        <source src="/img & icon/hero-video.mp4" />
+        <source src="/img_&_icon/hero-video.mp4" />
         <p class="paragraph">Your browser does not support HTML5 video.</p>
       </video>
     </section>
@@ -76,16 +76,34 @@
         </div>
         <div class="intro__right">
           <img
-            src="img & icon/intro-img-1.jpeg"
+            src="img_&_icon/intro-img-large-1.jpeg"
+            srcset="
+              img_&_icon/intro-img-small-1.jpeg   500w,
+              img_&_icon/intro-img-medium-1.jpeg  800w,
+              img_&_icon/intro-img-large-1.jpeg  1200w
+            "
+            sizes="
+              (max-width: 37.5em) 500px,
+              (max-width: 75em) 800px,
+              1200px
+            "
             alt="intro-img-1"
             class="intro__img intro__img--1"
-            loading="lazy"
           />
           <img
-            src="img & icon/intro-img-2.jpeg"
+            src="img_&_icon/intro-img-large-2.jpeg"
+            srcset="
+              img_&_icon/intro-img-small-2.jpeg   500w,
+              img_&_icon/intro-img-medium-2.jpeg  800w,
+              img_&_icon/intro-img-large-2.jpeg  1200w
+            "
+            sizes="
+              (max-width: 37.5em) 500px,
+              (max-width: 75em) 800px,
+              1200px
+            "
             alt="intro-img-2"
             class="intro__img intro__img--2"
-            loading="lazy"
           />
         </div>
       </div>
@@ -99,7 +117,7 @@
           <div class="services__box">
             <div class="services__box-icon">
               <img
-                src="/img & icon/services-icon-1.svg"
+                src="/img_&_icon/services-icon-1.svg"
                 alt="services-icon-1"
                 class="services__icon"
               />
@@ -114,7 +132,7 @@
           <div class="services__box">
             <div class="services__box-icon">
               <img
-                src="/img & icon/services-icon-2.svg"
+                src="/img_&_icon/services-icon-2.svg"
                 alt="services-icon-2"
                 class="services__icon"
               />
@@ -129,7 +147,7 @@
           <div class="services__box">
             <div class="services__box-icon">
               <img
-                src="/img & icon/services-icon-3.svg"
+                src="/img_&_icon/services-icon-3.svg"
                 alt="services-icon-3"
                 class="services__icon"
               />
@@ -150,7 +168,7 @@
           <!-- <div class="menu__box">
             <div class="menu__box-img">
               <img
-                src="/img & icon/test-img-1.jpeg"
+                src="/img_&_icon/test-img-1.jpeg"
                 alt="menu-img-1"
                 class="menu__img"
               />
