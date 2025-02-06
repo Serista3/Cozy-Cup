@@ -140,12 +140,39 @@ const delAllOrder = function () {
 
 /////////////////////////////////////////////////////
 
+// Add empty data to row if width <= 600px
+const addEmptyData = function () {
+  const screen = document.body.getBoundingClientRect().width;
+  const rowEl = orderTfoot.querySelector("tr");
+  if (
+    screen <= 600 &&
+    !rowEl.firstElementChild.classList.contains("order__heading-empty")
+  ) {
+    // add empty data to row
+    const html = `<th class="order__heading-empty" colspan="2">final price</th>`;
+    rowEl.insertAdjacentHTML("afterbegin", html);
+    return;
+  }
+
+  if (
+    screen >= 600 &&
+    rowEl.firstElementChild.classList.contains("order__heading-empty")
+  ) {
+    rowEl.removeChild(rowEl.firstChild);
+    return;
+  }
+};
+
+/////////////////////////////////////////////////////
+
 // Intitial
 const intitial = function () {
+  addEmptyData();
   addDataToOrderTable();
   document.querySelector(".order__tbody").addEventListener("click", delOrder);
   orderDel.addEventListener("click", showOrderPopup);
   delPopup.addEventListener("click", hiddenDelPopup);
+  window.addEventListener("resize", addEmptyData);
 };
 
 /////////////////////////////////////////////////////

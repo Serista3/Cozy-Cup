@@ -184,6 +184,49 @@ const storeDataOrder = function (e) {
 
 /////////////////////////////////////////////////////
 
+// Show nav responsive
+const addEventClickOpenNav = function (e) {
+  e.addEventListener("click", openNav);
+};
+
+const openNav = function () {
+  document.querySelector(".nav-res").classList.add("show-nav-res");
+};
+
+const closeNav = function () {
+  document.querySelector(".nav-res").classList.remove("show-nav-res");
+};
+
+const createNavRes = function () {
+  const html = `<div class="nav-res">
+                 <ul class="nav-res__list">
+                  <li class="nav-res__item"><a href="/index.html" class="nav-res__link">home</a></li>
+                  <li class="nav-res__item"><a href="/html/menu.html" class="nav-res__link">menu</a></li>
+                  <li class="nav-res__item"><a href="/html/order.html" class="nav-res__link">order</a></li>
+                 </ul>
+                 <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  fill="#fff"
+                  viewBox="0 0 256 256"
+                  class="nav-res__icon-menu"
+                  >
+                  <path
+                    d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"
+                  ></path>
+                  </svg>
+                </div>`;
+  document.body.insertAdjacentHTML("afterbegin", html);
+  addEventClickOpenNav(document.querySelector(".nav__item:last-child svg"));
+  document
+    .querySelector(".nav-res__icon-menu")
+    .addEventListener("click", closeNav);
+};
+createNavRes();
+
+/////////////////////////////////////////////////////
+
 // Addeventlistener
 const addEventClickBtnClose = function (e) {
   e.addEventListener("click", hiddenPopup);

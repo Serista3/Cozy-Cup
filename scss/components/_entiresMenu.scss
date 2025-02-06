@@ -20,11 +20,8 @@
     }
 
     @include responsive(tap-land) {
-      gap: 5rem;
-    }
-
-    @include responsive(tap-port) {
       grid-template-columns: repeat(2, 1fr);
+      gap: 5rem;
     }
 
     @include responsive(phone) {
@@ -36,7 +33,8 @@
     color: $color-white-light;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
+    max-width: 100%;
     width: 100%;
     position: relative;
     border-radius: 7px;

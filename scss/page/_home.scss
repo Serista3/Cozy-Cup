@@ -2,6 +2,10 @@
   padding-top: 3rem;
   padding-bottom: 3rem;
   border-bottom: 1px solid rgba($color-black-light, 0.5);
+  @include responsive(normal) {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
 }
 
 .section-hero {
