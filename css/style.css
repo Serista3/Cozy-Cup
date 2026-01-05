@@ -70,12 +70,6 @@ body {
   font-size: 2.2rem;
   font-weight: 500;
   line-height: 1.4; }
-  @media screen and (max-width: 56.25em) {
-    .heading-tertiary {
-      font-size: 2rem; } }
-  @media screen and (max-width: 37.5em) {
-    .heading-tertiary {
-      font-size: 1.8rem; } }
 
 .paragraph {
   font-weight: 400; }
