@@ -48,7 +48,7 @@
 
   &__addit {
     position: absolute;
-    bottom: 1.5rem;
+    bottom: 5.5rem;
     right: 1.5rem;
     font-size: 2rem;
     font-weight: 350;
@@ -101,15 +101,12 @@
     text-transform: uppercase;
   }
 
-  &__box:hover > &__detail {
+  &__show-detail {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
   }
 
-  &__box:hover {
-    transform: scale(1.03);
-  }
 }
 
 .btn--buy {

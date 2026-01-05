@@ -9,6 +9,20 @@ const noti = document.querySelector(".noti");
 
 /////////////////////////////////////////////////////
 
+// Menu detail
+export const viewMenuDetail = function (e) {
+  // find element data
+  const parentNode = e.target.parentNode.parentNode;
+  const menuDetail = parentNode.querySelector(".menu__detail");
+  menuDetail.classList.add("menu__show-detail");
+}
+
+export const hiddenMenuDetail = function (e) {
+  // find element data
+  const parentNode = e.target.parentNode;
+  parentNode.classList.remove("menu__show-detail");
+}
+
 // popup
 export const createPopup = function (e) {
   // find element data
@@ -249,33 +263,40 @@ export const createMenu = function (parentNode) {
   const recomBoxImg = document.createElement("div");
   const additHeading = document.createElement("h3");
   const recomImg = document.createElement("img");
+  const recomBtnView = document.createElement("button");
   const recomDetail = document.createElement("div");
   const heading3 = document.createElement("h3");
   const recomPrices = document.createElement("div");
   const paragraph = document.createElement("p");
   const btnBuy = document.createElement("button");
+  const btnClose = document.createElement("div");
 
   // set class to elements
   recomBox.classList.add("menu__box");
   recomBoxImg.classList.add("menu__box-img");
   additHeading.classList.add("menu__addit");
   recomImg.classList.add("menu__img");
+  recomBtnView.classList.add("btn");
+  recomBtnView.classList.add("btn--view");
   recomDetail.classList.add("menu__detail");
   heading3.classList.add("heading-tertiary");
   recomPrices.classList.add("menu__price");
   paragraph.classList.add("paragraph");
   btnBuy.classList.add("btn");
   btnBuy.classList.add("btn--buy");
+  btnClose.classList.add("btn--close");
 
   // append child node
   recomBox.appendChild(recomBoxImg);
   recomBoxImg.appendChild(recomImg);
   recomBoxImg.appendChild(additHeading);
+  recomBoxImg.appendChild(recomBtnView);
   recomBox.appendChild(recomDetail);
   recomDetail.appendChild(heading3);
   recomDetail.appendChild(recomPrices);
   recomDetail.appendChild(paragraph);
   recomDetail.appendChild(btnBuy);
+  recomDetail.appendChild(btnClose);
 
   // append parent node
   parentNode.appendChild(recomBox);
@@ -285,12 +306,14 @@ export const createMenu = function (parentNode) {
     recomBox,
     recomBoxImg,
     additHeading,
+    recomBtnView,
     recomImg,
     recomDetail,
     heading3,
     recomPrices,
     paragraph,
     btnBuy,
+    btnClose,
   };
 };
 

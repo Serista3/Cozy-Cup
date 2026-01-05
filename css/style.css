@@ -205,6 +205,36 @@ body {
   background-color: #302a00;
   color: #fff; }
 
+.btn--view {
+  margin: 1rem auto 0 auto;
+  position: absolute;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%; }
+  .btn--view:hover {
+    transform: none;
+    background-color: #10b981;
+    color: #fff; }
+  .btn--view:active {
+    transform: none; }
+
+.btn--close {
+  position: absolute;
+  top: -.5rem;
+  right: 1rem;
+  font-size: 2.5rem;
+  font-weight: 200;
+  color: rgba(255, 255, 255, 0.7);
+  background-color: transparent;
+  border: none;
+  cursor: pointer; }
+  .btn--close:hover {
+    color: #fff; }
+  .btn--close:active {
+    transform: none; }
+
 .btn--confirm {
   margin: auto 0 0 0;
   background-color: #272727;
@@ -249,7 +279,7 @@ body {
     position: relative; }
   .menu__addit {
     position: absolute;
-    bottom: 1.5rem;
+    bottom: 5.5rem;
     right: 1.5rem;
     font-size: 2rem;
     font-weight: 350;
@@ -292,12 +322,10 @@ body {
     padding: 0.5rem 1rem;
     border-radius: 1.5rem;
     text-transform: uppercase; }
-  .menu__box:hover > .menu__detail {
+  .menu__show-detail {
     transform: translateY(0);
     opacity: 1;
     visibility: visible; }
-  .menu__box:hover {
-    transform: scale(1.03); }
 
 .btn--buy {
   margin-top: auto;
@@ -906,3 +934,6 @@ body {
 @media screen and (max-width: 87.5em) {
   .section-dessert {
     margin: 0 3rem; } }
+
+.section-order {
+  min-height: 100vh; }
