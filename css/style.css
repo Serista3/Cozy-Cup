@@ -217,7 +217,7 @@ body {
 .btn--close {
   position: absolute;
   top: -.5rem;
-  right: 1rem;
+  right: .9rem;
   font-size: 2.5rem;
   font-weight: 200;
   color: rgba(255, 255, 255, 0.7);
