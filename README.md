@@ -1,6 +1,6 @@
 # ☕ Cozy Cup
 
-![Project Banner](https://github.com/user-attachments/assets/a362fc67-b4af-404e-a3a7-39e3f559a134)
+![Project Banner](https://github.com/user-attachments/assets/947f864a-22f5-48fd-b06c-5f9baebdf98b)
 
 > **Web Site จำลองร้านกาแฟแบบเรียบง่าย** โดยที่ได้มีการอ้างอิงถึงเว็บไซต์ของร้านกาแฟอื่นๆหลายแห่งเพื่อใช้ในการออกแบบ เช่น Cafe Amazon
 
