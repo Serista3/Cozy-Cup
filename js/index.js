@@ -9,10 +9,6 @@ const recomContent = document.querySelector(".menu__content");
 /////////////////////////////////////////////////////
 
 // Addeventlistener
-const addEventClickBtnClose = function (e) {
-  e.addEventListener("click", reuse.hiddenMenuDetail);
-}
-
 const addEventClickMenuBox = function (e) {
   e.addEventListener("click", reuse.createPopup);
 };
@@ -40,12 +36,9 @@ const setDataRecomEl = async function (parentNode) {
     objectEl.heading3.textContent = p.items[0].name;
     objectEl.recomPrices.textContent = `${p.items[0].price} baht`;
     objectEl.paragraph.textContent = p.items[0].description;
-    objectEl.btnBuy.textContent = "buy";
-    objectEl.btnClose.textContent = "×";
 
     // addeventlistener
     addEventClickMenuBox(objectEl.recomBox);
-    addEventClickBtnClose(objectEl.btnClose);
   });
 };
 

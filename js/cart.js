@@ -1,14 +1,14 @@
-import * as data from "../js/recieveData.js";
+import * as data from "./recieveData.js";
 
 /////////////////////////////////////////////////////
 
 // Selecting elements
-const orderTbody = document.querySelector(".order__tbody");
-const orderTfoot = document.querySelector(".order__tfoot");
-const finalPriceEl = orderTfoot.firstElementChild.querySelector(
-  ".order__heading-final"
+const cartTbody = document.querySelector(".cart__tbody");
+const cartTfoot = document.querySelector(".cart__tfoot");
+const finalPriceEl = cartTfoot.firstElementChild.querySelector(
+  ".cart__heading-final"
 );
-const orderDel = document.querySelector(".order__heading-del");
+const cartDel = document.querySelector(".cart__heading-del");
 const delPopup = document.querySelector(".del-popup");
 const del = delPopup.querySelector(".del");
 const btnYes = document.querySelector(".btn--yes");
@@ -16,50 +16,49 @@ const btnNo = document.querySelector(".btn--no");
 
 /////////////////////////////////////////////////////
 
-// Order final price
-let orderFinalPrice = 0;
+// Cart final price
+let cartFinalPrice = 0;
 
 /////////////////////////////////////////////////////
 
-// Add data to older table
-const addDataToOrderTable = function () {
+// Add data to cart table
+const addDataToCartTable = function () {
   // get data from local
-  const dataOrder = data.getDataFromLocal("orderData");
-  // const dataRecomOrder = data.getDataFromLocal("orderRecomData");
-
+  const dataCart = data.getDataFromLocal("cartData");
+  // const dataRecomCart = data.getDataFromLocal("cartRecomData");
   // check if data not empty
-  if (dataOrder) {
-    dataOrder.forEach((d) => {
-      orderFinalPrice += Number.parseFloat(d.finalPrice);
+  if (dataCart) {
+    dataCart.forEach((d) => {
+      cartFinalPrice += Number.parseFloat(d.finalPrice);
       const html = `
-            <tr class="order__row">
-              <td class="order__data">${d.formatDate}</td>
-              <td class="order__data">
+            <tr class="cart__row">
+              <td class="cart__data">${d.formatDate}</td>
+              <td class="cart__data">
                 <img
                   src=${d.image}
-                  alt="order-image-product"
+                  alt="cart-image-product"
                   width="100"
-                  class="order__img"
+                  class="cart__img"
                 />
               </td>
-              <td class="order__data">${d.name}</td>
-              <td class="order__data">${d.amount}</td>
-              <td class="order__data">${d.finalPrice} BAHT</td>
-              <td class="order__data"><svg class="icon-del" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#fa0000" viewBox="0 0 256 256"><path d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"></path></svg></td>
+              <td class="cart__data">${d.name}</td>
+              <td class="cart__data">${d.amount}</td>
+              <td class="cart__data">${d.finalPrice} BAHT</td>
+              <td class="cart__data"><svg class="icon-del" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#fa0000" viewBox="0 0 256 256"><path d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"></path></svg></td>
             </tr>`;
-      orderTbody.insertAdjacentHTML("afterbegin", html);
+      cartTbody.insertAdjacentHTML("afterbegin", html);
     });
   }
 
   // set final price
-  finalPriceEl.textContent = `${orderFinalPrice.toFixed(2)} BAHT`;
+  finalPriceEl.textContent = `${cartFinalPrice.toFixed(2)} BAHT`;
 };
 
 /////////////////////////////////////////////////////
 
-// Delete order
-const showOrderPopup = function (e) {
-  if (!e.target.classList.contains("order__heading-del")) return;
+// Delete cart
+const showCartPopup = function (e) {
+  if (!e.target.classList.contains("cart__heading-del")) return;
 
   // show del-popup
   delPopup.classList.add("show-popup");
@@ -70,7 +69,7 @@ const showOrderPopup = function (e) {
     .addEventListener("click", hiddenDelPopup);
 
   btnNo.addEventListener("click", hiddenDelPopup);
-  btnYes.addEventListener("click", delAllOrder);
+  btnYes.addEventListener("click", delAllCart);
 };
 
 const hiddenDelPopup = function (e) {
@@ -84,21 +83,21 @@ const hiddenDelPopup = function (e) {
   del.classList.remove("show-content-popup");
 };
 
-const delOrder = function (e) {
+const delCart = function (e) {
   // selecting elements
   const curEl = e.target.closest(".icon-del");
   const parentEl = curEl.parentNode.parentNode;
   const nameEl = parentEl.querySelector(
-    ".order__data:nth-child(3)"
+    ".cart__data:nth-child(3)"
   ).textContent;
-  const priceEl = parentEl.querySelector(".order__data:nth-child(5)");
+  const priceEl = parentEl.querySelector(".cart__data:nth-child(5)");
   const price = Number(priceEl.textContent.split(" ")[0]);
 
   if (!curEl) return;
 
   // fetch data
   let receiveData = [];
-  const info = data.getDataFromLocal("orderData");
+  const info = data.getDataFromLocal("cartData");
   info.forEach((i) => {
     if (i.name !== nameEl) {
       receiveData.push(i);
@@ -106,11 +105,11 @@ const delOrder = function (e) {
   });
 
   // remove item from table
-  orderTbody.removeChild(parentEl);
+  cartTbody.removeChild(parentEl);
 
   // update final price
-  orderFinalPrice -= price;
-  finalPriceEl.textContent = `${orderFinalPrice.toFixed(2)} BAHT`;
+  cartFinalPrice -= price;
+  finalPriceEl.textContent = `${cartFinalPrice.toFixed(2)} BAHT`;
 
   // clear local storage
   if (receiveData.length === 0) {
@@ -119,16 +118,16 @@ const delOrder = function (e) {
   }
 
   // update to local storage
-  data.setDataToLocal("orderData", receiveData);
+  data.setDataToLocal("cartData", receiveData);
 };
 
-const delAllOrder = function () {
+const delAllCart = function () {
   // remove all child element
-  orderTbody.innerHTML = "";
+  cartTbody.innerHTML = "";
 
   // set final price = 0
-  orderFinalPrice = 0;
-  finalPriceEl.textContent = `${orderFinalPrice.toFixed(2)} BAHT`;
+  cartFinalPrice = 0;
+  finalPriceEl.textContent = `${cartFinalPrice.toFixed(2)} BAHT`;
 
   // clear data storage
   data.clearDataFromLocal();
@@ -143,20 +142,20 @@ const delAllOrder = function () {
 // Add empty data to row if width <= 600px
 const addEmptyData = function () {
   const screen = document.body.getBoundingClientRect().width;
-  const rowEl = orderTfoot.querySelector("tr");
+  const rowEl = cartTfoot.querySelector("tr");
   if (
     screen <= 600 &&
-    !rowEl.firstElementChild.classList.contains("order__heading-empty")
+    !rowEl.firstElementChild.classList.contains("cart__heading-empty")
   ) {
     // add empty data to row
-    const html = `<th class="order__heading-empty" colspan="2">final price</th>`;
+    const html = `<th class="cart__heading-empty" colspan="2">final price</th>`;
     rowEl.insertAdjacentHTML("afterbegin", html);
     return;
   }
 
   if (
     screen >= 600 &&
-    rowEl.firstElementChild.classList.contains("order__heading-empty")
+    rowEl.firstElementChild.classList.contains("cart__heading-empty")
   ) {
     rowEl.removeChild(rowEl.firstChild);
     return;
@@ -168,9 +167,9 @@ const addEmptyData = function () {
 // Intitial
 const intitial = function () {
   addEmptyData();
-  addDataToOrderTable();
-  document.querySelector(".order__tbody").addEventListener("click", delOrder);
-  orderDel.addEventListener("click", showOrderPopup);
+  addDataToCartTable();
+  document.querySelector(".cart__tbody").addEventListener("click", delCart);
+  cartDel.addEventListener("click", showCartPopup);
   delPopup.addEventListener("click", hiddenDelPopup);
   window.addEventListener("resize", addEmptyData);
 };

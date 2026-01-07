@@ -11,10 +11,6 @@ const dessert = document.querySelector(".dessert");
 /////////////////////////////////////////////////////
 
 // Addeventlistener
-const addEventClickBtnClose = function (e) {
-  e.addEventListener("click", reuse.hiddenMenuDetail);
-}
-
 const addEventClickMenuBox = function (e) {
   e.addEventListener("click", reuse.createPopup);
 };
@@ -46,12 +42,9 @@ const setDataMenuEl = async function (parentNode, want) {
         objectEl.heading3.textContent = i.name;
         objectEl.recomPrices.textContent = `${i.price} baht`;
         objectEl.paragraph.textContent = i.description;
-        objectEl.btnBuy.textContent = "buy";
-        objectEl.btnClose.textContent = "×";
 
         // addeventlistener
         addEventClickMenuBox(objectEl.recomBox);
-        addEventClickBtnClose(objectEl.btnClose);
       });
       return;
     }

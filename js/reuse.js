@@ -3,25 +3,11 @@ import * as data from "../js/recieveData.js";
 /////////////////////////////////////////////////////
 
 // Selecting
-const popup = document.querySelector(".popup-buy");
-const popupContent = document.querySelector(".popup-buy__content");
+const popup = document.querySelector(".popup-add-cart");
+const popupContent = document.querySelector(".popup-add-cart__content");
 const noti = document.querySelector(".noti");
 
 /////////////////////////////////////////////////////
-
-// Menu detail
-export const viewMenuDetail = function (e) {
-  // find element data
-  const parentNode = e.target.parentNode.parentNode;
-  const menuDetail = parentNode.querySelector(".menu__detail");
-  menuDetail.classList.add("menu__show-detail");
-}
-
-export const hiddenMenuDetail = function (e) {
-  // find element data
-  const parentNode = e.target.parentNode;
-  parentNode.classList.remove("menu__show-detail");
-}
 
 // popup
 export const createPopup = function (e) {
@@ -32,15 +18,15 @@ export const createPopup = function (e) {
   // insert data to new code html
   const html = `
     <div class="btn--close-pop">X</div>
-    <div class="popup-buy__header">
-        <div class="popup-buy__box-img">
+    <div class="popup-add-cart__header">
+        <div class="popup-add-cart__box-img">
             <img
                 src=${parentSibling.firstChild.src}
                 alt=${parentSibling.firstChild.alt}
-                class="popup-buy__img"
+                class="popup-add-cart__img"
             />
         </div>
-        <div class="popup-buy__detail">
+        <div class="popup-add-cart__detail">
             <h3 class="heading-tertiary">${
               parentNode.parentNode.querySelector(".heading-tertiary").textContent
             }</h3>
@@ -48,16 +34,16 @@ export const createPopup = function (e) {
             ${parentNode.parentNode.querySelector(".paragraph").textContent}
             </p>
             
-            <div class="popup-buy__body">
+            <div class="popup-add-cart__body">
                 <input
                 type="number"
-                class="popup-buy__amount"
+                class="popup-add-cart__amount"
                 placeholder="amount"
                 min="1"
                 max="100000"
                 required
                 />
-                <div class="popup-buy__price">${
+                <div class="popup-add-cart__price">${
                   parentNode.parentNode.querySelector(".menu__price").textContent
                 }</div>
             </div>
@@ -87,13 +73,13 @@ const hiddenPopup = function () {
 };
 
 const hiddenPopupByClick = function (e) {
-  // check if click element by class popup-buy
-  if (!e.target.classList.contains("popup-buy")) return;
+  // check if click element by class popup-add-cart
+  if (!e.target.classList.contains("popup-add-cart")) return;
 
   // remove class show
   e.target.classList.remove("show-popup");
   e.target
-    .querySelector(".popup-buy__content")
+    .querySelector(".popup-add-cart__content")
     .classList.remove("show-content-popup");
 };
 
@@ -104,7 +90,7 @@ const showNotification = function () {
   // create current node
   const div = document.createElement("div");
   const textNode = document.createTextNode(
-    "You have successfully placed an order."
+    "Item added to cart successfully."
   );
 
   // add class to current node
@@ -132,16 +118,16 @@ const showNotification = function () {
 
 /////////////////////////////////////////////////////
 
-// Store data from order popup
-const storeDataOrder = function (e) {
+// Store data from cart popup
+const storeDataCart = function (e) {
   // find elements
   const parentEl = e.target.parentNode;
   const nameProduct = parentEl.querySelector(".heading-tertiary");
   const imgProduct =
-    parentEl.previousElementSibling.querySelector(".popup-buy__img");
-  const popupBody = parentEl.querySelector(".popup-buy__body");
-  const amountProduct = popupBody.querySelector(".popup-buy__amount");
-  const price = popupBody.querySelector(".popup-buy__price");
+    parentEl.previousElementSibling.querySelector(".popup-add-cart__img");
+  const popupBody = parentEl.querySelector(".popup-add-cart__body");
+  const amountProduct = popupBody.querySelector(".popup-add-cart__amount");
+  const price = popupBody.querySelector(".popup-add-cart__price");
 
   // calc data
   const date = new Date();
@@ -167,20 +153,20 @@ const storeDataOrder = function (e) {
   ) {
     // hidden popup
     document
-      .querySelector(".popup-buy__content")
+      .querySelector(".popup-add-cart__content")
       .classList.remove("show-content-popup");
-    document.querySelector(".popup-buy").classList.remove("show-popup");
+    document.querySelector(".popup-add-cart").classList.remove("show-popup");
 
     // check if list product is empty
-    const receiveOrderData = data.getDataFromLocal("orderData");
-    if (data.orderProducts.length === 0 && receiveOrderData) {
-      receiveOrderData.forEach((r) => {
-        data.orderProducts.push(r);
+    const receiveCartData = data.getDataFromLocal("cartData");
+    if (data.cartProducts.length === 0 && receiveCartData) {
+      receiveCartData.forEach((r) => {
+        data.cartProducts.push(r);
       });
     }
 
     // push data to list
-    data.orderProducts.push({
+    data.cartProducts.push({
       formatDate,
       image,
       name,
@@ -189,7 +175,7 @@ const storeDataOrder = function (e) {
     });
 
     // set data to local
-    data.setDataToLocal("orderData", data.orderProducts);
+    data.setDataToLocal("cartData", data.cartProducts);
 
     // show noti
     showNotification();
@@ -216,7 +202,7 @@ const createNavRes = function () {
                  <ul class="nav-res__list">
                   <li class="nav-res__item"><a href="/index.html" class="nav-res__link">home</a></li>
                   <li class="nav-res__item"><a href="/html/menu.html" class="nav-res__link">menu</a></li>
-                  <li class="nav-res__item"><a href="/html/order.html" class="nav-res__link">order</a></li>
+                  <li class="nav-res__item"><a href="/html/cart.html" class="nav-res__link">cart</a></li>
                  </ul>
                  <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -251,7 +237,7 @@ const addEventClickPopupClose = function (e) {
 };
 
 const addEventClickConfirm = function (e) {
-  e.addEventListener("click", storeDataOrder);
+  e.addEventListener("click", storeDataCart);
 };
 
 /////////////////////////////////////////////////////
@@ -267,8 +253,6 @@ export const createMenu = function (parentNode) {
   const heading3 = document.createElement("h3");
   const recomPrices = document.createElement("div");
   const paragraph = document.createElement("p");
-  const btnBuy = document.createElement("button");
-  const btnClose = document.createElement("div");
 
   // set class to elements
   recomBox.classList.add("menu__box");
@@ -279,9 +263,6 @@ export const createMenu = function (parentNode) {
   heading3.classList.add("heading-tertiary");
   recomPrices.classList.add("menu__price");
   paragraph.classList.add("paragraph");
-  btnBuy.classList.add("btn");
-  btnBuy.classList.add("btn--buy");
-  btnClose.classList.add("btn--close");
 
   // append child node
   recomBox.appendChild(recomBoxImg);
@@ -291,8 +272,6 @@ export const createMenu = function (parentNode) {
   recomDetail.appendChild(heading3);
   recomDetail.appendChild(recomPrices);
   recomDetail.appendChild(paragraph);
-  recomDetail.appendChild(btnBuy);
-  recomDetail.appendChild(btnClose);
 
   // append parent node
   parentNode.appendChild(recomBox);
@@ -307,8 +286,6 @@ export const createMenu = function (parentNode) {
     heading3,
     recomPrices,
     paragraph,
-    btnBuy,
-    btnClose,
   };
 };
 

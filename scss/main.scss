@@ -14,8 +14,8 @@
 @import "components/intro";
 @import "components/navRes";
 @import "components/notification";
-@import "components/order";
-@import "components/popup-buy";
+@import "components/cart";
+@import "components/popup-add-cart";
 @import "components/popup-del";
 @import "components/services";
 
@@ -26,4 +26,4 @@
 // Page
 @import "page/home";
 @import "page/menu";
-@import "page/order";
+@import "page/cart";

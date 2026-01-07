@@ -13,8 +13,8 @@ export const receiveDataFromJson = async function () {
 
 /////////////////////////////////////////////////////
 
-// Data from order
-export const orderProducts = [];
+// Data from cart
+export const cartProducts = [];
 
 /////////////////////////////////////////////////////
 

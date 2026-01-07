@@ -1,4 +1,4 @@
-.order {
+.cart {
   @include responsive(normal) {
     margin: 0 3rem !important;
   }
@@ -21,7 +21,7 @@
 
   &__row {
     &:last-child {
-      .order__data {
+      .cart__data {
         border: none;
       }
     }
@@ -122,8 +122,8 @@
   }
 
   &__tfoot {
-    .order__row {
-      .order__heading {
+    .cart__row {
+      .cart__heading {
         padding: 1rem 2rem;
         background-color: $color-black-dark;
         color: $color-white-dark;

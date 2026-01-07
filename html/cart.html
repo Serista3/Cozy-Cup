@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/style.css" />
     <script defer src="/js/reuse.js" type="module"></script>
-    <script defer src="/js/order.js" type="module"></script>
-    <title>Order</title>
+    <script defer src="/js/cart.js" type="module"></script>
+    <title>Cart</title>
   </head>
   <body>
-    <div class="popup-buy">
-      <div class="popup-buy__content"></div>
+    <div class="popup-add-cart">
+      <div class="popup-add-cart__content"></div>
     </div>
     <section class="section-nav">
       <nav class="nav center-element">
@@ -23,7 +23,7 @@
             <a href="/html/menu.html" class="nav__link">menu</a>
           </li>
           <li class="nav__item">
-            <a href="/html/order.html" class="nav__link">order</a>
+            <a href="/html/cart.html" class="nav__link">cart</a>
           </li>
           <li class="nav__item">
             <svg
@@ -41,31 +41,31 @@
         </ul>
       </nav>
     </section>
-    <section class="section-order padding-verticaly-section-bottom">
-      <div class="order center-element">
+    <section class="section-cart padding-verticaly-section-bottom">
+      <div class="cart center-element">
         <h1
           class="heading-primary margin-top-large margin-btm-large text-center"
         >
-          Order
+          Cart
         </h1>
-        <div class="order__table-continer">
-          <table class="order__table">
-            <thead class="order__thead">
-              <tr class="order__row">
-                <th class="order__heading">Date</th>
-                <th class="order__heading">Image</th>
-                <th class="order__heading">Product</th>
-                <th class="order__heading">amount</th>
-                <th class="order__heading">price</th>
-                <th class="order__heading">&nbsp;</th>
+        <div class="cart__table-continer">
+          <table class="cart__table">
+            <thead class="cart__thead">
+              <tr class="cart__row">
+                <th class="cart__heading">Date</th>
+                <th class="cart__heading">Image</th>
+                <th class="cart__heading">Product</th>
+                <th class="cart__heading">amount</th>
+                <th class="cart__heading">price</th>
+                <th class="cart__heading">&nbsp;</th>
               </tr>
             </thead>
-            <tbody class="order__tbody"></tbody>
-            <tfoot class="order__tfoot">
-              <tr class="order__row">
-                <th class="order__heading" colspan="4">final price</th>
-                <th class="order__heading-final">0.00 BAHT</th>
-                <th class="order__heading-del">delete all</th>
+            <tbody class="cart__tbody"></tbody>
+            <tfoot class="cart__tfoot">
+              <tr class="cart__row">
+                <th class="cart__heading" colspan="4">final price</th>
+                <th class="cart__heading-final">0.00 BAHT</th>
+                <th class="cart__heading-del">delete all</th>
               </tr>
             </tfoot>
           </table>
@@ -84,7 +84,7 @@
               <a href="/html/menu.html" class="footer__link">menu</a>
             </li>
             <li class="footer__item">
-              <a href="/html/order.html" class="footer__link">order</a>
+              <a href="/html/cart.html" class="footer__link">cart</a>
             </li>
           </ul>
         </nav>
