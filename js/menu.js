@@ -11,15 +11,11 @@ const dessert = document.querySelector(".dessert");
 /////////////////////////////////////////////////////
 
 // Addeventlistener
-const addEventClickBtnView = function (e) {
-  e.addEventListener("click", reuse.viewMenuDetail);
-}
-
 const addEventClickBtnClose = function (e) {
   e.addEventListener("click", reuse.hiddenMenuDetail);
 }
 
-const addEventClickBtnBuy = function (e) {
+const addEventClickMenuBox = function (e) {
   e.addEventListener("click", reuse.createPopup);
 };
 
@@ -46,8 +42,7 @@ const setDataMenuEl = async function (parentNode, want) {
         const objectEl = reuse.createMenu(parentNode);
         objectEl.recomImg.setAttribute("src", `${i.img}`);
         objectEl.recomImg.setAttribute("alt", `menu-img`);
-        objectEl.recomBtnView.textContent = "view";
-        objectEl.additHeading.textContent = i.name;
+        objectEl.additHeading.innerHTML = `<div>${i.name}</div><div>→</div>`;
         objectEl.heading3.textContent = i.name;
         objectEl.recomPrices.textContent = `${i.price} baht`;
         objectEl.paragraph.textContent = i.description;
@@ -55,9 +50,8 @@ const setDataMenuEl = async function (parentNode, want) {
         objectEl.btnClose.textContent = "×";
 
         // addeventlistener
-        addEventClickBtnView(objectEl.recomBtnView);
+        addEventClickMenuBox(objectEl.recomBox);
         addEventClickBtnClose(objectEl.btnClose);
-        addEventClickBtnBuy(objectEl.btnBuy);
       });
       return;
     }

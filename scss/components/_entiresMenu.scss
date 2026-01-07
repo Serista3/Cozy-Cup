@@ -42,21 +42,31 @@
     overflow: hidden;
     transition: all 0.3s;
     position: relative;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.025);
+    }
+
     &-img {
     }
   }
 
   &__addit {
     position: absolute;
-    bottom: 5.5rem;
-    right: 1.5rem;
+    width: 100%;
+    right: 0rem;
+    bottom: 0rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-size: 2rem;
     font-weight: 350;
     background-color: rgba($color-black-dark, 0.6);
     backdrop-filter: blur(3px);
     color: $color-white-dark;
     padding: 0.5rem 1.5rem;
-    border-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
     border: 1px solid rgba($color-white-dark, 0.3);
     box-shadow: 0 1rem 3rem rgba($color-black-dark, 0.3);
     // clip-path: polygon(7% 0, 100% 0, 93% 100%, 0 100%);

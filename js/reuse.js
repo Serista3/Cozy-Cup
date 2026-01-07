@@ -27,7 +27,7 @@ export const hiddenMenuDetail = function (e) {
 export const createPopup = function (e) {
   // find element data
   const parentNode = e.target.parentNode;
-  const parentSibling = parentNode.previousSibling;
+  const parentSibling = parentNode;
 
   // insert data to new code html
   const html = `
@@ -42,10 +42,10 @@ export const createPopup = function (e) {
         </div>
         <div class="popup-buy__detail">
             <h3 class="heading-tertiary">${
-              parentNode.querySelector(".heading-tertiary").textContent
+              parentNode.parentNode.querySelector(".heading-tertiary").textContent
             }</h3>
             <p class="paragraph">
-            ${parentNode.querySelector(".paragraph").textContent}
+            ${parentNode.parentNode.querySelector(".paragraph").textContent}
             </p>
             
             <div class="popup-buy__body">
@@ -58,10 +58,10 @@ export const createPopup = function (e) {
                 required
                 />
                 <div class="popup-buy__price">${
-                  parentNode.querySelector(".menu__price").textContent
+                  parentNode.parentNode.querySelector(".menu__price").textContent
                 }</div>
             </div>
-            <button class="btn btn--confirm">Confirm</button
+            <button class="btn btn--confirm">Add To Cart</button
         </div>
     </div>`;
 
@@ -263,7 +263,6 @@ export const createMenu = function (parentNode) {
   const recomBoxImg = document.createElement("div");
   const additHeading = document.createElement("h3");
   const recomImg = document.createElement("img");
-  const recomBtnView = document.createElement("button");
   const recomDetail = document.createElement("div");
   const heading3 = document.createElement("h3");
   const recomPrices = document.createElement("div");
@@ -276,8 +275,6 @@ export const createMenu = function (parentNode) {
   recomBoxImg.classList.add("menu__box-img");
   additHeading.classList.add("menu__addit");
   recomImg.classList.add("menu__img");
-  recomBtnView.classList.add("btn");
-  recomBtnView.classList.add("btn--view");
   recomDetail.classList.add("menu__detail");
   heading3.classList.add("heading-tertiary");
   recomPrices.classList.add("menu__price");
@@ -290,7 +287,6 @@ export const createMenu = function (parentNode) {
   recomBox.appendChild(recomBoxImg);
   recomBoxImg.appendChild(recomImg);
   recomBoxImg.appendChild(additHeading);
-  recomBoxImg.appendChild(recomBtnView);
   recomBox.appendChild(recomDetail);
   recomDetail.appendChild(heading3);
   recomDetail.appendChild(recomPrices);
@@ -306,7 +302,6 @@ export const createMenu = function (parentNode) {
     recomBox,
     recomBoxImg,
     additHeading,
-    recomBtnView,
     recomImg,
     recomDetail,
     heading3,

@@ -270,18 +270,26 @@ body {
     box-shadow: 0 1rem 3rem rgba(39, 39, 39, 0.2);
     overflow: hidden;
     transition: all 0.3s;
-    position: relative; }
+    position: relative;
+    cursor: pointer; }
+    .menu__box:hover {
+      transform: scale(1.025); }
   .menu__addit {
     position: absolute;
-    bottom: 5.5rem;
-    right: 1.5rem;
+    width: 100%;
+    right: 0rem;
+    bottom: 0rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-size: 2rem;
     font-weight: 350;
     background-color: rgba(39, 39, 39, 0.6);
     backdrop-filter: blur(3px);
     color: #fff;
     padding: 0.5rem 1.5rem;
-    border-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 1rem 3rem rgba(39, 39, 39, 0.3); }
   .menu__img {

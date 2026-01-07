@@ -9,15 +9,11 @@ const recomContent = document.querySelector(".menu__content");
 /////////////////////////////////////////////////////
 
 // Addeventlistener
-const addEventClickBtnView = function (e) {
-  e.addEventListener("click", reuse.viewMenuDetail);
-}
-
 const addEventClickBtnClose = function (e) {
   e.addEventListener("click", reuse.hiddenMenuDetail);
 }
 
-const addEventClickBtnBuy = function (e) {
+const addEventClickMenuBox = function (e) {
   e.addEventListener("click", reuse.createPopup);
 };
 
@@ -40,8 +36,7 @@ const setDataRecomEl = async function (parentNode) {
     const objectEl = reuse.createMenu(parentNode);
     objectEl.recomImg.setAttribute("src", `${p.items[0].img}`);
     objectEl.recomImg.setAttribute("alt", `menu-img`);
-    objectEl.recomBtnView.textContent = "view";
-    objectEl.additHeading.textContent = p.items[0].name;
+    objectEl.additHeading.innerHTML = `<div>${p.items[0].name}</div><div>→</div>`;
     objectEl.heading3.textContent = p.items[0].name;
     objectEl.recomPrices.textContent = `${p.items[0].price} baht`;
     objectEl.paragraph.textContent = p.items[0].description;
@@ -49,9 +44,8 @@ const setDataRecomEl = async function (parentNode) {
     objectEl.btnClose.textContent = "×";
 
     // addeventlistener
-    addEventClickBtnView(objectEl.recomBtnView);
+    addEventClickMenuBox(objectEl.recomBox);
     addEventClickBtnClose(objectEl.btnClose);
-    addEventClickBtnBuy(objectEl.btnBuy);
   });
 };
 
